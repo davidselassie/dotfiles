@@ -1,7 +1,37 @@
 [
-    { "keys": ["right"], "command": "null"},
-    { "keys": ["left"], "command": "null"},
-    { "keys": ["up"], "command": "null"},
-    { "keys": ["down"], "command": "null"},
-    { "keys": ["alt+q"], "command": "wrap_lines_plus" }
+	{
+		"keys": ["right"],
+		"command": "null"
+	},
+	{
+		"keys": ["left"],
+		"command": "null"
+	},
+	{
+		"keys": ["up"],
+		"command": "null"
+	},
+	{
+		"keys": ["down"],
+		"command": "null"
+	},
+	{
+		"keys": ["shift+tab"],
+		"command": "insert",
+		"args": {"characters": "\t"}
+	},
+	{
+		"keys": ["alt+q"],
+		"command": "wrap_lines_plus"
+	},
+	{
+		"keys": ["super+ctrl+b", "super+ctrl+b"],
+		"command": "insert",
+		"args": {"characters": "import ipdb; ipdb.set_trace()"}
+	},
+	{
+		"keys": ["super+shift+d"],
+		"command": "expand_selection",
+		"args": {"to": "word"}
+	}
 ]

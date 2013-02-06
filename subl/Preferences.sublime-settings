@@ -1,7 +1,11 @@
 {
+	"auto_indent": true,
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"translate_tabs_to_spaces": true
+	"word_wrap": true
 }
