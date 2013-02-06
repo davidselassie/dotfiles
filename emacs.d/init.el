@@ -1,6 +1,11 @@
 ;; David Selassie
 ;; Emacs init.el
 
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives
+ '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 (setq-default make-backup-files nil)
 
 (setq-default menu-bar-mode 0)
