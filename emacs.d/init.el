@@ -71,6 +71,8 @@
 (setq-default whitespace-line-column nil)
 
 (global-linum-mode t)
+(set-face-background 'hl-line "bright black")
+(set-face-background 'region "bright black")
 (setq-default linum-format (format "%%03d%c" ?\x200B))
 (setq-default column-number-mode t)
 (setq-default line-number-mode t)
