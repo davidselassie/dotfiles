@@ -3,7 +3,5 @@
 [core]
     editor = emacs
     excludesfile = ~/.gitglobalignore
-[push]
-    default = simple
 [include]
     path = ~/.gitlocalconfig
