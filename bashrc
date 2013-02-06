@@ -36,8 +36,6 @@ export PROMPT_COMMAND="make-prompt"
 # Shows only the last three path components.
 export PROMPT_DIRTRIM=3
 
-export editor="subl"
-
 HOMEROOT="$HOME/.local"
 export GOROOT="$HOMEROOT/go"
 export PLAN9="$HOMEROOT/plan9"
