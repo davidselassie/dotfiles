@@ -1,0 +1,4 @@
+Host *
+     ForwardAgent yes
+     TCPKeepAlive yes
+     ServerAliveInterval 240

@@ -1,0 +1,11 @@
+set input-meta on
+set output-meta on
+set convert-meta off
+
+set horizontal-scroll-mode off
+
+set completion-ignore-case on
+set completion-map-case on
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[3~": delete-char

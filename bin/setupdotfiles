@@ -1,0 +1,32 @@
+#!/bin/bash
+
+cd "$HOME"
+
+if [[ -d .dotfiles ]]; then
+    cd .dotfiles
+    git pull
+    cd "$HOME"
+else
+    git clone selassid@temdisk.stanford.edu:repos/dotfiles
+    mv dotfiles .dotfiles
+fi
+
+chmod -R g= .dotfiles/
+chmod -R o= .dotfiles/
+
+# So the glob below will match hidden files.
+shopt -s dotglob
+for FILE in .dotfiles/*
+do
+    DESTFILE="${FILE##*/}"
+    # Don't copy the git repository.
+    if [[ "$DESTFILE" == ".git" || "$DESTFILE" == ".DS_Store" ]]; then
+	continue
+    fi
+
+    if [[ -e "$DESTFILE" || -h "$DESTFILE" ]]; then
+	rm -rf "$DESTFILE"
+    fi	
+    ln -s "$FILE" "$DESTFILE"
+done
+

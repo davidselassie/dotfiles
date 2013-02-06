@@ -1,0 +1,7 @@
+[
+    { "keys": ["right"], "command": "null"},
+    { "keys": ["left"], "command": "null"},
+    { "keys": ["up"], "command": "null"},
+    { "keys": ["down"], "command": "null"},
+    { "keys": ["alt+q"], "command": "wrap_lines_plus" }
+]

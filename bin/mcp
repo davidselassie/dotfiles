@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Copies one file into multiple folders.
+
+# USAGE: cpm.sh source_file targets...
+
+source="$1"
+shift
+
+for dest in "$@"
+do
+	if [ -d "$dest" ]
+	then
+		cp -r "$source" "$dest"
+	else
+		echo "mcp: '$dest' is not a directory" 1>&2
+	fi
+done
+

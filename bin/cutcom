@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# David Selassie
+# March 27, 2012
+# cutcom
+
+# Removes bash comments from a file.
+# USAGE: cutcom FILE > NOCOMMENTS
+
+sed '/^\s*[#@]/d' "$@"

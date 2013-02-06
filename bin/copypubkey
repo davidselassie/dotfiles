@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# David Selassie
+# November 15, 2011
+# copypubkey
+
+# Makes an ssh keypair for you if you don't have one, logs into a remote machine and copies your public key to the correct place for password-less login, cleans up permissions, then exits.
+
+if (( $# < 1 ))
+then
+    echo "USAGE: copypubkey [USER@]HOST [KEY]"
+    echo "Makes a RSA key pair if you don't have one, then copies the public key to the host so you can use it to authenticate without a password."
+    exit 1
+fi
+
+SERVER="$1"
+
+PRI_KEY_PATH="$HOME/.ssh/id_rsa"
+if [[ $2 ]]
+then
+    PRI_KEY_PATH="$2"
+    echo "Using key located at $PRI_KEY_PATH."
+fi
+
+if [[ ! -e "$PRI_KEY_PATH" ]]
+then
+    echo "Making your key pair..."
+    ssh-keygen -t rsa -N '' -f "$PRI_KEY_PATH"
+fi
+
+if [[ -e "$PRI_KEY_PATH" ]]
+then
+    echo "Copying your public key to $SERVER:~/.ssh/authorized_keys ..."
+    echo "You'll need to enter your password manually one last time below."
+    PUB_KEY=`cat "$PRI_KEY_PATH.pub"`
+    echo
+    ssh -o 'StrictHostKeyChecking=no' "$SERVER" "echo \"#### \$USER@\$HOSTNAME:\" && mkdir -v -p ~/.ssh && echo 'Inserting into ~/.ssh/authorized_keys public key' && echo \"$PUB_KEY\" | tee -a ~/.ssh/authorized_keys && chmod -v 700 ~/.ssh && chmod -v 600 ~/.ssh/authorized_keys"; DONE=$?
+    unset PUB_KEY
+    echo "####"
+    echo
+    
+    if (( $DONE == 0 ))
+    then
+	   echo "You should now be able to 'ssh $SERVER' without having to type in a password."
+    else
+	   echo "Couldn't log in ($DONE)! Copy your key manually."
+    fi
+else
+    echo "Something is wrong with your key pair! Make yours manually."
+fi

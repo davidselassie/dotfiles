@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+# David Selassie
+# November 28, 2011
+# randargs
+
+# USAGE: randargs -n NUM ARGS...
+# Picks NUM random arguments from ARGS and prints them to stdout.
+
+require 'rubygems'
+require 'trollop'
+
+opts = Trollop::options do
+    opt :num, "Number of args to randomly choose", :type => :int
+end
+
+Trollop::die :num, "Specify how many arguments to pick" if not opts[:num]
+
+puts ARGV.sample(opts[:num]).join(" ")

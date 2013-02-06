@@ -1,0 +1,4 @@
+emacs.d/auto-save-list/
+ssh/authorized_keys
+ssh/id_*
+ssh/known_hosts
