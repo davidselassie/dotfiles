@@ -30,12 +30,19 @@ function screen-prompt {
     fi
 }
 function make-prompt {
+    # Append to history file after every prompt.
+    history -a
     PS1="${C1}\h${NC}$(screen-prompt):${C2}\w${NC}$(git-prompt)\$ "
 }
 
-export PROMPT_COMMAND="make-prompt"
+PROMPT_COMMAND="make-prompt"
 # Shows only the last three path components.
-export PROMPT_DIRTRIM=3
+PROMPT_DIRTRIM=3
+
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTFILESIZE=1000000
+HISTSIZE=1000000
 
 HOMEROOT="$HOME/.local"
 export GOROOT="$HOMEROOT/go"
