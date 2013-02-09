@@ -12,7 +12,8 @@ RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 
 function git-prompt {
-    REF=$(git symbolic-ref HEAD 2> /dev/null) || return
+    # Remember, || is command level.
+    REF=$(git symbolic-ref HEAD 2> /dev/null) || REF=$(git rev-parse HEAD 2> /dev/null) || return
     STATUS=$(git status 2> /dev/null)
     if [[ $STATUS =~ "to be committed" ]]; then
         STAGED="${GREEN}S"
