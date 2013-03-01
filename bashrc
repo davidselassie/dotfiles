@@ -5,6 +5,8 @@
 
 # Don't load on non interactive instances.
 [[ $- != *i* ]] && return
+# Load tmux on first pass, then continue on second.
+[[ $TERM != "screen" ]] && exec tmux
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
