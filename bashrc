@@ -85,7 +85,11 @@ alias du="du -hs"
 alias em="emacs -nw"
 # Can use "cd -" to uncd.
 alias git-archive='git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD'
-alias git-kill-branch='git fetch && git branch -d $1 && git push --delete $1'
+function git-kill-branch {
+    git fetch
+    git branch -d $1
+    git push origin --delete $1
+}
 function md {
     mkdir "$1"
     cd "$1"
