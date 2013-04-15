@@ -55,6 +55,10 @@ export PLAN9="$HOMEROOT/plan9"
 export PATH="$HOMEROOT/bin:$HOMEROOT/binlocal:/usr/local/bin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
 export MANPATH="$HOMEROOT/man:$MANPATH"
 
+export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
+export EDITOR=emacsclient
+export VISUAL=emacsclient
+
 if [[ $(uname) == "Darwin" ]]; then
     export LSCOLORS="exgxfxdxcxegedabagacad"
     alias ls="ls -lhHG"
@@ -82,7 +86,7 @@ alias rsync="rsync -avz"
 alias frsync="rsync -av -e 'ssh -c arcfour -o Compression=no -x'"
 alias rm="rm -iv"
 alias du="du -hs"
-alias em="emacs -nw"
+alias em="emacsclient -t"
 # Can use "cd -" to uncd.
 alias git-archive='git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD'
 function git-kill-branch {
