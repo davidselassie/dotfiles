@@ -1,21 +1,5 @@
 [
 	{
-		"keys": ["right"],
-		"command": "null"
-	},
-	{
-		"keys": ["left"],
-		"command": "null"
-	},
-	{
-		"keys": ["up"],
-		"command": "null"
-	},
-	{
-		"keys": ["down"],
-		"command": "null"
-	},
-	{
 		"keys": ["shift+tab"],
 		"command": "insert",
 		"args": {"characters": "\t"}
