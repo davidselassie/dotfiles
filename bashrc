@@ -56,8 +56,8 @@ export PATH="$HOMEROOT/bin:$HOMEROOT/binlocal:/usr/local/bin:$PATH:/usr/local/he
 export MANPATH="$HOMEROOT/man:$MANPATH"
 
 export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
-export EDITOR=emacsclient
-export VISUAL=emacsclient
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -t"
 
 if [[ $(uname) == "Darwin" ]]; then
     export LSCOLORS="exgxfxdxcxegedabagacad"
