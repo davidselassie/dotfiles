@@ -75,7 +75,7 @@ else
     }
 fi
 
-alias grep="grep -iPn"
+alias grep="grep -iEn"
 function sg {
     # Remember that aliases don't get expanded in scripts.
     find . -type fl | xargs grep -in "$*"
