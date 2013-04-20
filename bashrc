@@ -7,6 +7,8 @@
 [[ $- != *i* ]] && return
 # Load tmux on first pass, then continue on second.
 [[ -z $TMUX ]] && exec tmux -2 attach
+# Reattach to user OS X namespace on first pass, then continue on second.
+[[ -n $(which reattach-to-user-namespace) && -z $REATTACHED ]] && REATTACHED=1 exec reattach-to-user-namespace -l bash
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
