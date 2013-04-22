@@ -58,8 +58,16 @@ export PATH="$HOMEROOT/bin:$HOMEROOT/binlocal:/usr/local/bin:$PATH:/usr/local/he
 export MANPATH="$HOMEROOT/man:$MANPATH"
 
 export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
-export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -t"
+# Emacsclient work inside of emacs if you do not force TTY start.
+if [[ -n $INSIDE_EMACS ]]; then
+    alias em="emacsclient"
+    export EDITOR="emacsclient"
+    export VISUAL="emacsclient"
+else
+    alias em="emacsclient -t"
+    export EDITOR="emacsclient -t"
+    export VISUAL="emacsclient -t"
+fi
 
 if [[ $(uname) == "Darwin" ]]; then
     export LSCOLORS="exgxfxdxcxegedabagacad"
@@ -88,7 +96,6 @@ alias rsync="rsync -avz"
 alias frsync="rsync -av -e 'ssh -c arcfour -o Compression=no -x'"
 alias rm="rm -iv"
 alias du="du -hs"
-alias em="emacsclient -t"
 # Can use "cd -" to uncd.
 alias git-archive='git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD'
 function git-kill-branch {
