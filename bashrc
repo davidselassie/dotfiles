@@ -61,12 +61,12 @@ export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already runni
 # Emacsclient work inside of emacs if you do not force TTY start.
 if [[ -n $INSIDE_EMACS ]]; then
     alias em="emacsclient"
-    export EDITOR="emacsclient"
-    export VISUAL="emacsclient"
+    export EDITOR="$(which emacsclient)"
+    export VISUAL="$(which emacsclient)"
 else
     alias em="emacsclient -t"
-    export EDITOR="emacsclient -t"
-    export VISUAL="emacsclient -t"
+    export EDITOR="$(which emacsclient) -t"
+    export VISUAL="$(which emacsclient) -t"
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
