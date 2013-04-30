@@ -60,14 +60,13 @@ export MANPATH="$HOMEROOT/man:$MANPATH"
 export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
 # Emacsclient work inside of emacs if you do not force TTY start.
 if [[ -n $INSIDE_EMACS ]]; then
-    # We know we're setting our tmux session to have xterm key codes and 256 colors. This causes the emacs init scrips to work properly.
-    alias em="TERM=xterm-256color emacsclient"
-    # Hard code the full path to emacsclient since git might run in an environment with a different path.
-    export EDITOR="TERM=xterm-256color $(which emacsclient)"
+    alias em="emacsclient"
+    export EDITOR="$(which emacsclient)"
     export VISUAL=$EDITOR
 else
-    alias em="TERM=xterm-256color emacsclient -t"
-    export EDITOR="TERM=xterm-256color $(which emacsclient) -t"
+    alias em="emacsclient -t"
+    # Hard code the full path to emacsclient since git might run in an environment with a different path.
+    export EDITOR="$(which emacsclient) -t"
     export VISUAL=$EDITOR
 fi
 
