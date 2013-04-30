@@ -6,7 +6,7 @@
 # Don't load on non interactive instances.
 [[ $- != *i* ]] && return
 # Load tmux on first pass, then continue on second.
-[[ -z $TMUX ]] && exec tmux -2 attach
+[[ -z $TMUX ]] && exec tmux attach
 # Reattach to user OS X namespace on first pass, then continue on second.
 [[ -n $(which reattach-to-user-namespace) && -z $REATTACHED ]] && REATTACHED=1 exec reattach-to-user-namespace -l bash
 
@@ -60,13 +60,15 @@ export MANPATH="$HOMEROOT/man:$MANPATH"
 export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
 # Emacsclient work inside of emacs if you do not force TTY start.
 if [[ -n $INSIDE_EMACS ]]; then
-    alias em="emacsclient"
-    export EDITOR="$(which emacsclient)"
-    export VISUAL="$(which emacsclient)"
+    # We know we're setting our tmux session to have xterm key codes and 256 colors. This causes the emacs init scrips to work properly.
+    alias em="TERM=xterm-256color emacsclient"
+    # Hard code the full path to emacsclient since git might run in an environment with a different path.
+    export EDITOR="TERM=xterm-256color $(which emacsclient)"
+    export VISUAL=$EDITOR
 else
-    alias em="emacsclient -t"
-    export EDITOR="$(which emacsclient) -t"
-    export VISUAL="$(which emacsclient) -t"
+    alias em="TERM=xterm-256color emacsclient -t"
+    export EDITOR="TERM=xterm-256color $(which emacsclient) -t"
+    export VISUAL=$EDITOR
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
