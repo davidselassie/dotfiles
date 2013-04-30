@@ -1,3 +1,4 @@
+# Allow Unicode IO.
 set input-meta on
 set output-meta on
 set convert-meta off
@@ -5,6 +6,7 @@ set convert-meta off
 set horizontal-scroll-mode off
 
 set completion-ignore-case on
+# Complete - == _
 set completion-map-case on
 
 # xterm escape code bindings.
