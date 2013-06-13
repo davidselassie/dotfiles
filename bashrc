@@ -101,8 +101,11 @@ alias du="du -hs"
 alias git-archive='git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD'
 function git-kill-branch {
     git fetch
-    git branch -d $1
-    git push origin --delete $1
+    for B in "$@"
+    do
+        git branch -d $B
+        git push origin --delete $B
+    done
 }
 function md {
     mkdir "$1"
