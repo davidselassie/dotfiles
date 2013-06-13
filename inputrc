@@ -8,6 +8,7 @@ set horizontal-scroll-mode off
 set completion-ignore-case on
 # Complete - == _
 set completion-map-case on
+set show-all-if-ambiguous on
 
 # xterm escape code bindings.
 "\e[1;3D": backward-word
