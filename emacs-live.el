@@ -3,4 +3,5 @@
                   live/clojure-pack
                   live/lang-pack
                   live/power-pack))
+(live-add-packs '(live/bindings-pack))
 (live-add-packs '(~/.live-packs/selassid-pack))
