@@ -1,17 +1,7 @@
 #!/bin/bash
-
-# David Selassie
-# bashrc
-
-# Don't load on non interactive instances.
-[[ $- != *i* ]] && return
-# Load tmux on first pass, then continue on second.
-[[ -z $TMUX ]] && exec tmux attach
-# Reattach to user OS X namespace on first pass, then continue on second.
-[[ -n $(which reattach-to-user-namespace) && -z $REATTACHED ]] && REATTACHED=1 exec reattach-to-user-namespace -l bash
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+# This is where bash specific, interactive settings go. It will be read
+# automatically on non-login interactive startup and manually in profile
+# on login interactive startup.
 
 [[ -s "$HOME/.hashcolor" ]] && source "$HOME/.hashcolor"
 GREEN="\[\033[0;32m\]"
@@ -51,23 +41,11 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=1000000
 HISTSIZE=1000000
 
-HOMEROOT="$HOME/.local"
-export GOROOT="$HOMEROOT/go"
-export PLAN9="$HOMEROOT/plan9"
-export PATH="$HOMEROOT/bin:$HOMEROOT/binlocal:/usr/local/bin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
-export MANPATH="$HOMEROOT/man:$MANPATH"
-
-export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
 # Emacsclient work inside of emacs if you do not force TTY start.
 if [[ -n $INSIDE_EMACS ]]; then
     alias em="emacsclient"
-    export EDITOR="$(which emacsclient)"
-    export VISUAL=$EDITOR
 else
     alias em="emacsclient -t"
-    # Hard code the full path to emacsclient since git might run in an environment with a different path.
-    export EDITOR="$(which emacsclient) -t"
-    export VISUAL=$EDITOR
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
