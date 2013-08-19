@@ -24,10 +24,10 @@ fi
 # Don't load any UI stuff on non interactive instances.
 if [[ $- == *i* ]]; then
     # Load tmux on first pass, then continue on second.
-    [[ -z $TMUX ]] && exec tmux attach
+    # [[ -z $TMUX ]] && exec tmux attach
     # Reattach to user OS X namespace on first pass, then continue on second.
-    [[ -n $(which reattach-to-user-namespace) && -z $REATTACHED ]] && REATTACHED=1 exec reattach-to-user-namespace -l bash
-    # Interactive login shells need to manually read bashrc.
+    # [[ -n $(which reattach-to-user-namespace) && -z $REATTACHED ]] && REATTACHED=1 exec reattach-to-user-namespace -l bash
+    # Login shells need to manually read bashrc.
     if [ -r ~/.bashrc ]; then source ~/.bashrc; fi
 fi
 # Non-login interactive shells automatically read bashrc.
