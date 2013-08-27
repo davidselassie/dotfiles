@@ -31,3 +31,5 @@ if [[ $- == *i* ]]; then
     if [ -r ~/.bashrc ]; then source ~/.bashrc; fi
 fi
 # Non-login interactive shells automatically read bashrc.
+
+[[ -s "$HOME/.profilelocal" ]] && source "$HOME/.profilelocal"
