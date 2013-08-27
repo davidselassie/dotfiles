@@ -18,8 +18,11 @@ function git-prompt {
     if [[ $STATUS =~ "not staged" ]]; then
         UNSTAGED="${RED}U"
     fi
+    if [[ $STATUS =~ "Unmerged paths" ]]; then
+        CONFLICT="${YELLOW}C"
+    fi
 
-    echo "(${C3}${REF#refs/heads/}${STAGED}${UNSTAGED}${NC})"
+    echo "(${C3}${REF#refs/heads/}${STAGED}${UNSTAGED}${CONFLICT}${NC})"
 }
 function screen-prompt {
     if [[ ${WINDOW} ]]; then
