@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Print out all executables on the path that match a regexp.
+# USAGE: globwhich PATTERN
+
+find ${PATH//:/ } -name $1 -executable 2>/dev/null
