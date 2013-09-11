@@ -9,6 +9,7 @@ export GOROOT="$HOMEROOT/go"
 export PLAN9="$HOMEROOT/plan9"
 export PATH="$HOMEROOT/bin:$HOMEROOT/binlocal:/usr/local/bin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
 export MANPATH="$HOMEROOT/man:$MANPATH"
+export PKG_CONFIG_PATH="$HOMEROOT/lib/pkgconfig"
 
 export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
 # Emacsclient work inside of emacs if you do not force TTY start.
