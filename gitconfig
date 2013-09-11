@@ -4,3 +4,5 @@
     excludesfile = ~/.gitglobalignore
 [include]
     path = ~/.gitlocalconfig
+[merge]
+	conflictstyle = diff3
