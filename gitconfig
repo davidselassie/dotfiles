@@ -5,4 +5,10 @@
 [include]
     path = ~/.gitlocalconfig
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
+    ff = false
+    renormalize = true
+[filter "spabs"]
+    clean = expand --initial -t 4
+    smudge = expand --initial -t 4
+    required
