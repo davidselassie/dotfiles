@@ -5,7 +5,6 @@
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 export HOMEROOT="$HOME/.local"
-export GOROOT="$HOMEROOT/go"
 export PLAN9="$HOMEROOT/plan9"
 export PATH="$HOMEROOT/bin:$HOMEROOT/binlocal:/usr/local/bin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
 export MANPATH="$HOMEROOT/man:$MANPATH"
