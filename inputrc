@@ -9,6 +9,8 @@ set completion-ignore-case on
 # Complete - == _
 set completion-map-case on
 set show-all-if-ambiguous on
+# Complete the / at the end of symlinks to dirs
+set mark-symlinked-directories on
 
 # xterm escape code bindings.
 "\e[1;3D": backward-word
