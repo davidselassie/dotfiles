@@ -2,7 +2,7 @@
 
 if [[ $# < 2 ]]
 then
-    echo "USAGE: git-get-merge COMMIT_SHA [RECIPIENT_BRANCH]" 1>&2
+    echo "USAGE: git-find-merge COMMIT_SHA [RECIPIENT_BRANCH]" 1>&2
     echo "Finds the merge commit that introduced COMMIT_SHA into RECIPIENT_BRANCH (defaults to 'master')." 1>&2
     exit 1
 fi
