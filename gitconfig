@@ -14,3 +14,4 @@
     required
 [alias]
     co = checkout
+    graph = log --oneline --graph --decorate --all
