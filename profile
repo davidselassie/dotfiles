@@ -6,7 +6,7 @@
 
 export HOMEROOT="$HOME/.local"
 export PLAN9="$HOMEROOT/plan9"
-export PATH="$HOMEROOT/bin:$HOMEROOT/binlocal:/usr/local/bin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
+export PATH="$HOMEROOT/bin:$HOMEROOT/.dotfiles/bin:/usr/local/bin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
 export MANPATH="$HOMEROOT/man:$MANPATH"
 export PKG_CONFIG_PATH="$HOMEROOT/lib/pkgconfig"
 
