@@ -80,14 +80,6 @@ alias rm="rm -iv"
 alias du="du -hs"
 # Can use "cd -" to uncd.
 alias git-archive='git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD'
-function git-kill-branch {
-    git fetch
-    for B in "$@"
-    do
-        git branch -d $B
-        git push origin --delete $B
-    done
-}
 function md {
     mkdir "$1"
     cd "$1"
