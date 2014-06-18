@@ -6,8 +6,8 @@
 
 export HOMEROOT="$HOME/.local"
 export PLAN9="$HOMEROOT/plan9"
-export PATH="$HOMEROOT/bin:$HOMEROOT/.dotfiles/bin:/usr/local/bin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
-export MANPATH="$HOMEROOT/man:$MANPATH"
+export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
+export MANPATH="$HOMEROOT/man:/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PKG_CONFIG_PATH="$HOMEROOT/lib/pkgconfig"
 
 export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
