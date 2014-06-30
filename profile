@@ -5,8 +5,7 @@
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 export HOMEROOT="$HOME/.local"
-export PLAN9="$HOMEROOT/plan9"
-export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:/usr/local/heroku/bin:$GOROOT/bin:$PLAN9/bin"
+export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:/usr/local/heroku/bin:$GOROOT/bin"
 export MANPATH="$HOMEROOT/man:/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PKG_CONFIG_PATH="$HOMEROOT/lib/pkgconfig"
 
