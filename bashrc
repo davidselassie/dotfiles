@@ -3,10 +3,12 @@
 # automatically on non-login interactive startup and manually in profile
 # on login interactive startup.
 
-[[ -s "$HOME/.hashcolor" ]] && source "$HOME/.hashcolor"
-GREEN="\[\033[0;32m\]"
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
+if [[ $TERM != "dumb" ]]; then
+    [[ -s "$HOME/.hashcolor" ]] && source "$HOME/.hashcolor"
+    GREEN="\[\033[0;32m\]"
+    RED="\[\033[0;31m\]"
+    YELLOW="\[\033[0;33m\]"
+fi
 
 function git-prompt {
     # Remember, || is command level.
