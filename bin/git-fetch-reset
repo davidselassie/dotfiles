@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+if [[ $1 == '-h' || $1 == '--help' ]]
+then
+    echo "USAGE: git-fetch-reset BRANCH"
+    echo "Resets the current branch to the version on the remote."
+    exit 1
+fi
+
+REMOTE="origin"
+BRANCH=$(git rev-parse --abbrev-ref ${1:-HEAD})
+
+git fetch "$REMOTE"
+git reset --hard "$REMOTE/$BRANCH"
