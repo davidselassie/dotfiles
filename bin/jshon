@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+"""Simple shell interface to construct JSON objects without matching
+brackets and commas everywhere.
+"""
+from __future__ import unicode_literals
+from __future__ import print_function
+
+import json
+import sys
+
+if '-h' in sys.argv or '--help' in sys.argv:
+   sys.stderr.write('USAGE: jshon --KEY VALUE...')
+   sys.exit(1)
+
+def typeify(token):
+    if token == 'null':
+        return None
+    try:
+        if '.' in token:
+            return float(token)
+        else:
+            return long(token)
+    except ValueError:
+        return token
+
+def parse_stream(tokens):
+    tokens = iter(tokens)
+    for token in tokens:
+        if token.startswith('--'):
+            key = token.lstrip('-')
+            value = typeify(next(tokens))
+            yield key, value
+        else:
+            raise ValueError("argument {0} isn't a flag starting with '--'".format(token))
+
+out_obj = dict(parse_stream(sys.argv[1:]))
+json.dump(out_obj, sys.stdout)
