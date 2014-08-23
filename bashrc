@@ -46,11 +46,11 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=1000000
 HISTSIZE=1000000
 
-# Emacsclient work inside of emacs if you do not force TTY start.
-if [[ -n $INSIDE_EMACS ]]; then
-    alias em="emacsclient"
+# Make em return immediately if inside of emacs just to spawn buffers.
+if [[ $INSIDE_EMACS ]]; then
+    alias em="emacsclient -n"
 else
-    alias em="emacsclient -t"
+    alias em="emacsclient"
 fi
 
 if [[ $(uname) == "Darwin" ]]; then

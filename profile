@@ -5,20 +5,14 @@
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 export HOMEROOT="$HOME/.local"
-export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:/usr/local/heroku/bin:$GOROOT/bin"
+export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/heroku/bin:$GOROOT/bin"
 export MANPATH="$HOMEROOT/man:/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PKG_CONFIG_PATH="$HOMEROOT/lib/pkgconfig"
 
 export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
-# Emacsclient work inside of emacs if you do not force TTY start.
-if [[ -n $INSIDE_EMACS ]]; then
-    export EDITOR="$(which emacsclient)"
-    export VISUAL=$EDITOR
-else
-    # Hard code the full path to emacsclient since git might run in an environment with a different path.
-    export EDITOR="$(which emacsclient) -t"
-    export VISUAL=$EDITOR
-fi
+# When emacs is invoked from a convenience command, don't use -n to wait.
+export EDITOR="$(which emacsclient)"
+export VISUAL="$EDITOR"
 
 # Don't load any UI stuff on non interactive instances.
 if [[ $- == *i* ]]; then
