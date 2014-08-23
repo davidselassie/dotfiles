@@ -70,10 +70,6 @@ else
 fi
 
 alias grep="grep -iEn"
-function sg {
-    # Remember that aliases don't get expanded in scripts.
-    find . -type fl | xargs grep -in "$*"
-}
 alias j="jobs"
 alias cp="cp -av"
 alias rsync="rsync -avz"
