@@ -10,6 +10,10 @@ if [[ $TERM != "dumb" ]]; then
     YELLOW="\[\033[0;33m\]"
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+fi
+
 function git-prompt {
     # Remember, || is command level.
     REF=$(git symbolic-ref HEAD 2> /dev/null) || REF=$(git rev-parse HEAD 2> /dev/null) || return
