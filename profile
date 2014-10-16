@@ -9,11 +9,6 @@ export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH:/usr/local/o
 export MANPATH="$HOMEROOT/man:/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PKG_CONFIG_PATH="$HOMEROOT/lib/pkgconfig"
 
-export ALTERNATE_EDITOR="" # This will start a daemon emacs if not already running.
-# When emacs is invoked from a convenience command, don't use -n to wait.
-export EDITOR="$(which emacsclient)"
-export VISUAL="$EDITOR"
-
 # Don't load any UI stuff on non interactive instances.
 if [[ $- == *i* ]]; then
     # Load tmux on first pass, then continue on second.

@@ -50,12 +50,20 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=1000000
 HISTSIZE=1000000
 
-# Make em return immediately if inside of emacs just to spawn buffers.
+export ALTERNATE_EDITOR=""  # This will start a daemon emacs if not already running.
 if [[ $INSIDE_EMACS ]]; then
+    # If called directly by me and we're inside emacs, spawn a buffer and return (-n).
     alias em="emacsclient -n"
+    # When called from another proc and we're inside emacs, spawn a buffer in the enclosing emacs (no -t) and wait (no -n).
+    export EDITOR="$(which emacsclient)"
 else
-    alias em="emacsclient"
+    # If called directly by me and we're outside of emacs, spawn a buffer and return (-n).
+    alias em="emacsclient -n"
+    # When called from another proc and we're outside of emacs, open a window right there (-t) and wait (no -n).
+    export EDITOR="$(which emacsclient) -t"
 fi
+# Afterwards so we get whatever was just setup.
+export VISUAL="$EDITOR"
 
 if [[ $(uname) == "Darwin" ]]; then
     export LSCOLORS="exgxfxdxcxegedabagacad"
