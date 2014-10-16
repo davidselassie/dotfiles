@@ -65,22 +65,26 @@ fi
 # Afterwards so we get whatever was just setup.
 export VISUAL="$EDITOR"
 
-if [[ $(uname) == "Darwin" ]]; then
-    export LSCOLORS="exgxfxdxcxegedabagacad"
-    alias ls="ls -lhHG"
-    alias sed="sed -E"
-    function lss {
-        CLICOLOR_FORCE=1 ls -lhHG $@ | less -nFRX
-    }
-    alias top="top -o cpu"
-else
+if [[ $(ls --version 2> /dev/null) == *GNU* ]]; then
     alias ls="ls -lhG --color=auto"
-    alias sed="sed -r"
     function lss {
         ls -lhG --color $@ | less -nFRX
     }
+else
+    export LSCOLORS="exgxfxdxcxegedabagacad"
+    alias ls="ls -lhHG"
+    function lss {
+        CLICOLOR_FORCE=1 ls -lhHG $@ | less -nFRX
+    }
 fi
-
+if [[ $(sed --version 2> /dev/null) == *GNU* ]]; then
+    alias sed="sed -r"
+else
+    alias sed="sed -E"
+fi
+if [[ ! $(top --version 2> /dev/null) == *procps* ]]; then
+    alias top="top -o cpu"
+fi
 alias grep="grep -iEn"
 alias j="jobs"
 alias cp="cp -av"
