@@ -10,7 +10,7 @@ if [[ $TERM != "dumb" ]]; then
     YELLOW="\[\033[0;33m\]"
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if [[ $(which brew) && -f $(brew --prefix)/etc/bash_completion ]]; then
     source $(brew --prefix)/etc/bash_completion
 fi
 
