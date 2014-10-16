@@ -80,6 +80,7 @@ alias rsync="rsync -avz"
 alias frsync="rsync -av -e 'ssh -c arcfour -o Compression=no -x'"
 alias rm="rm -iv"
 alias du="du -hs"
+alias jcat="jq -s -S 'reduce .[] as \$x ({}; . * \$x)'"
 # Can use "cd -" to uncd.
 alias git-archive='git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD'
 function md {
