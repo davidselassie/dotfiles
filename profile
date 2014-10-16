@@ -2,7 +2,7 @@
 # This gets executed on all login shells.
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+[[ $(which pyenv) ]] && eval "$(pyenv init -)"
 
 export HOMEROOT="$HOME/.local"
 export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/heroku/bin:$GOROOT/bin"
