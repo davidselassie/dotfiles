@@ -1,7 +1,7 @@
 [color]
     ui = auto
 [core]
-    excludesfile = ~/.dotfiles/gitglobalignore
+    excludesfile = ~/.dotfiles/gituserignore
 [include]
     path = ~/.gitlocalconfig
 [merge]

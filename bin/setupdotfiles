@@ -1,8 +1,12 @@
 #!/bin/bash
 
+set -e
+set -v
+
 cd "$HOME"
 
-if [[ -d .dotfiles ]]; then
+if [[ -d .dotfiles ]]
+then
     cd .dotfiles
     git pull --rebase origin master
     cd "$HOME"
@@ -10,11 +14,16 @@ else
     git clone git@github.com:selassid/dotfiles.git .dotfiles
 fi
 
-# All the links...
-ln -fs .dotfiles/bashrc .bashrc
-ln -fs .dotfiles/emacs-live.el .emacs-live.el
-ln -fs .dotfiles/gitconfig .gitconfig
-ln -fs .dotfiles/inputrc .inputrc
-ln -fs .dotfiles/profile .profile
-ln -fs .dotfiles/tmux.conf .tmux.conf
-ln -fs .dotfiles/ssh/config .ssh/config
+if [[ ! $(which brew) ]]
+then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if [[ ! $(which stow) ]]
+then
+    brew install stow
+fi
+
+stow -d .dotfiles -t "$HOME" shell emacs git ssh
+
+bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
