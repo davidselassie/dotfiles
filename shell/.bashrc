@@ -50,17 +50,24 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=1000000
 HISTSIZE=1000000
 
+# Find out if we have a GUI version of emacs.
+if [[ -x "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient" ]]
+then
+    EMACSCLIENT_CMD="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+else
+    EMACSCLIENT_CMD="$(which emacsclient)"
+fi
 export ALTERNATE_EDITOR=""  # This will start a daemon emacs if not already running.
 if [[ $INSIDE_EMACS ]]; then
     # If called directly by me and we're inside emacs, spawn a buffer and return (-n).
-    alias em="emacsclient -n"
+    alias em="$EMACSCLIENT_CMD -n"
     # When called from another proc and we're inside emacs, spawn a buffer in the enclosing emacs (no -t) and wait (no -n).
-    export EDITOR="$(which emacsclient)"
+    export EDITOR="$EMACSCLIENT_CMD"
 else
     # If called directly by me and we're outside of emacs, spawn a buffer and return (-n).
-    alias em="emacsclient -n"
+    alias em="$EMACSCLIENT_CMD -n"
     # When called from another proc and we're outside of emacs, open a window right there (-t) and wait (no -n).
-    export EDITOR="$(which emacsclient) -t"
+    export EDITOR="$EMACSCLIENT_CMD -t"
 fi
 # Afterwards so we get whatever was just setup.
 export VISUAL="$EDITOR"
