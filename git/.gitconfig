@@ -14,6 +14,8 @@
     required
 [alias]
     co = checkout
-    graph = log --oneline --graph --decorate --all
+    log = log --graph
+    graph = log --oneline --graph --decorate
+    tar = !sh -c "git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD"
 [push]
     default = simple
