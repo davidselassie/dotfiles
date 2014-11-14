@@ -23,6 +23,6 @@ then
     brew install stow
 fi
 
-stow -d .dotfiles -t "$HOME" shell emacs git ssh
-
 bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
+
+stow -d .dotfiles -t "$HOME" shell emacs git ssh
