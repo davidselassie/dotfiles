@@ -14,13 +14,12 @@ else
     git clone git@github.com:selassid/dotfiles.git .dotfiles
 fi
 
-if [[ ! $(which brew) ]]
-then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
 if [[ ! $(which stow) ]]
 then
+    if [[ ! $(which brew) ]]
+    then
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
     brew install stow
 fi
 
