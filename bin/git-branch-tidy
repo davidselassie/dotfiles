@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -e
-
-BASE=${1:-master}
-
-git branch --merged "$BASE" | grep -v "$BASE" | xargs git branch -d

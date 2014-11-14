@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+if [[ "$1" == "-h" || "$1" == "--help" ]]
+then
+    echo "USAGE: git-tidy [BASE=HEAD] [REMOTE]"
+    echo "Delete all branches that have been merged into BASE."
+    echo "If REMOTE is specified, fetch from REMOTE, prune dead branches, then delete merged branches on REMOTE."
+    exit 1
+fi
+
+BASE="${1:-$(git rev-parse --abbrev-ref HEAD)}"
+REMOTE="$2"
+
+if [[ ! "$REMOTE" ]]
+then
+    git branch --merged "$BASE" | grep -v "$BASE" | xargs git branch -d
+else
+    git fetch "$REMOTE"
+    git remote prune "$REMOTE"
+    git branch -r --merged "$BASE" | grep "$REMOTE/" | grep -v "$BASE" | fex /{2} | xargs git push "$REMOTE" --delete
+fi
