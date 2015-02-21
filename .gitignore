@@ -1,5 +1,1 @@
-emacs.d/auto-save-list/
-emacs.d/elpa/
-ssh/authorized_keys
-ssh/id_*
-ssh/known_hosts
+.DS_Store
