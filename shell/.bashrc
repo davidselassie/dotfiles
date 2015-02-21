@@ -59,14 +59,14 @@ else
 fi
 export ALTERNATE_EDITOR=""  # This will start a daemon emacs if not already running.
 if [[ $INSIDE_EMACS ]]; then
-    # If called directly by me and we're inside emacs, spawn a buffer and return (-n).
+    # If called directly by me and we're inside emacs, create a new frame in the GUI (no -t) and return (-n).
     alias em="$EMACSCLIENT_CMD -n"
     # When called from another proc and we're inside emacs, spawn a buffer in the enclosing emacs (no -t) and wait (no -n).
     export EDITOR="$EMACSCLIENT_CMD"
 else
-    # If called directly by me and we're outside of emacs, spawn a buffer and return (-n).
+    # If called directly by me and we're outside of emacs, create a new frame in the GUI (no -t) and return (-n).
     alias em="$EMACSCLIENT_CMD -n"
-    # When called from another proc and we're outside of emacs, open a window right there (-t) and wait (no -n).
+    # When called from another proc and we're outside of emacs, open a new frame right there (-t) and wait (no -n).
     export EDITOR="$EMACSCLIENT_CMD -t"
 fi
 # Afterwards so we get whatever was just setup.
@@ -148,3 +148,6 @@ function back {
 }
 
 [[ -s "$HOME/.bashlocalrc" ]] && source "$HOME/.bashlocalrc"
+
+# added by travis gem
+[ -f /Users/selassid/.travis/travis.sh ] && source /Users/selassid/.travis/travis.sh
