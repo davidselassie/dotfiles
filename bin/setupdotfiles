@@ -5,8 +5,7 @@ set -v
 
 cd "$HOME"
 
-if [[ -d .dotfiles ]]
-then
+if [[ -d .dotfiles ]]; then
     cd .dotfiles
     git pull --rebase origin master
     cd "$HOME"
@@ -14,12 +13,16 @@ else
     git clone git@github.com:selassid/dotfiles.git .dotfiles
 fi
 
-if [[ ! $(which stow) ]]
-then
-    if [[ ! $(which brew) ]]
-    then
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
+chsh -s /bin/zsh
+if [[ ! -d .oh-my-zsh ]]; then
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
+
+if [[ ! $(which brew) ]]; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if [[ ! $(which stow) ]]; then
     brew install stow
 fi
 
