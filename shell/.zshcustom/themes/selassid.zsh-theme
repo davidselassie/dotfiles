@@ -1,7 +1,7 @@
-autoload -U colors && color
+autoload -U colors && colors
 export LSCOLORS="ExGxFxDxCxEgEdAbAgAcAd"
 
-PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)$%{$reset_color%} '
+PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) $ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg_bold[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$(git_prompt_status)%{$reset_color%})"
