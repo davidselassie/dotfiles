@@ -13,7 +13,9 @@ else
     git clone git@github.com:selassid/dotfiles.git .dotfiles
 fi
 
-chsh -s /bin/zsh
+if [[ $(dscl . -read "/Users/$USER" UserShell) != "UserShell: */zsh" ]]; then
+    chsh -s /bin/zsh
+fi
 if [[ ! -d .oh-my-zsh ]]; then
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 fi
@@ -26,6 +28,8 @@ if [[ ! $(which stow) ]]; then
     brew install stow
 fi
 
-bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
+if [[ $(head -n1 "$HOME/.emacs.d/init.el") != "*Emacs LIVE*" ]]; then
+    bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
+fi
 
 stow -d .dotfiles -t "$HOME" shell emacs git ssh
