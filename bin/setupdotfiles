@@ -26,8 +26,8 @@ if [[ -z $(which stow) ]]; then
     brew install stow
 fi
 
-if [[ $(head -n1 "$HOME/.emacs.d/init.el") != "*Emacs LIVE*" ]]; then
+if [[ $(head -n1 "$HOME/.emacs.d/init.el") != (*Emacs LIVE*) ]]; then
     bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
 fi
 
-stow -d .dotfiles -t "$HOME" shell emacs git ssh
+stow -d "$HOME/.dotfiles" -t "$HOME" shell emacs git ssh
