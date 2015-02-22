@@ -1,30 +1,28 @@
-#!/bin/bash
+#!/bin/zsh
 
-set -e
-set -v
+setopt errexit
+setopt xtrace
 
-cd "$HOME"
-
-if [[ -d .dotfiles ]]; then
-    cd .dotfiles
-    git pull --rebase origin master
-    cd "$HOME"
+if [[ -d "$HOME/.dotfiles" ]]; then
+    (cd "$HOME/.dotfiles";
+     git pull --rebase origin master)
 else
-    git clone git@github.com:selassid/dotfiles.git .dotfiles
+    (cd "$HOME";
+     git clone git@github.com:selassid/dotfiles.git .dotfiles)
 fi
 
-if [[ $(dscl . -read "/Users/$USER" UserShell) != "UserShell: */zsh" ]]; then
+if [[ $(dscl . -read "/Users/$USER" UserShell) != */zsh ]]; then
     chsh -s /bin/zsh
 fi
-if [[ ! -d .oh-my-zsh ]]; then
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 fi
 
-if [[ ! $(which brew) ]]; then
+if [[ -z $(which brew) ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if [[ ! $(which stow) ]]; then
+if [[ -z $(which stow) ]]; then
     brew install stow
 fi
 
