@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# David Selassie
-# March 27, 2012
-# cleancols
-
-# Replaces whitespace on each line in a file with tabs.
-# USAGE: cat IN | cleancols [NEW_DELIM] > OUT
+if [[ "$1" == "-h" || "$1" == "--help" ]]
+then
+  echo "Replaces whitespace on each line in a file with tabs."
+  echo "USAGE: $(basename $0) [NEW_DELIM='\t'] < IN > OUT"
+  exit 1
+fi
 
 DELIM=${1:-'\t'}
 if [[ $(uname) == 'Darwin' ]]; then
@@ -14,4 +14,4 @@ else
     SED='sed -r'
 fi
 
-$SED -e 's/\s+/'"${DELIM}"'/g' -e 's/(\.[[:digit:]]{0,6})[[:digit:]]*/\1/g'
+exec $SED -e 's/\s+/'"${DELIM}"'/g' -e 's/(\.[[:digit:]]{0,6})[[:digit:]]*/\1/g'

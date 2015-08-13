@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ "$1" == "-h" || "$1" == "--help" ]]
+if [[ $# -lt 1 || "$1" == "-h" || "$1" == "--help" ]]
 then
 	echo "Copies one file into multiple folders."
-	echo "USAGE: $0 SOURCE_FILE TARGETS..."
+	echo "USAGE: $(basename $0) SOURCE_FILE TARGETS..."
 	exit 1
 fi
 

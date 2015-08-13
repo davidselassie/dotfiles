@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# David Selassie
-# November 15, 2011
-# copypubkey
-
-# Makes an ssh keypair for you if you don't have one, logs into a remote machine and copies your public key to the correct place for password-less login, cleans up permissions, then exits.
-
-if (( $# < 1 ))
+if [[ $# -lt 1 || "$1" == "-h" || "$1" == "--help" ]]
 then
     echo "USAGE: copypubkey [USER@]HOST [KEY]"
     echo "Makes a RSA key pair if you don't have one, then copies the public key to the host so you can use it to authenticate without a password."
@@ -38,7 +32,7 @@ then
     unset PUB_KEY
     echo "####"
     echo
-    
+
     if (( $DONE == 0 ))
     then
 	   echo "You should now be able to 'ssh $SERVER' without having to type in a password."
