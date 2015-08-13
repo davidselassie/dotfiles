@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# Copies one file into multiple folders.
-
-# USAGE: cpm.sh source_file targets...
+if [[ "$1" == "-h" || "$1" == "--help" ]]
+then
+	echo "Copies one file into multiple folders."
+	echo "USAGE: $0 SOURCE_FILE TARGETS..."
+	exit 1
+fi
 
 source="$1"
 shift
@@ -16,4 +19,3 @@ do
 		echo "mcp: '$dest' is not a directory" 1>&2
 	fi
 done
-
