@@ -5,6 +5,6 @@
 # cutcom
 
 # Removes bash comments from a file.
-# USAGE: cutcom FILE > NOCOMMENTS
+# USAGE: cutcom < FILE > NOCOMMENTS
 
-sed '/^\s*[#@]/d' "$@"
+sed '/^\s*[#@]/d'
