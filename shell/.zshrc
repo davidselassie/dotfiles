@@ -36,13 +36,7 @@ else
 fi
 # If called directly by me, use any existing frame in the GUI (no -t) and return immediately (-n).
 alias em="$emacs -n"
-if [[ -n $INSIDE_EMACS ]]; then
-    # When called from another proc and we're inside emacs, wait (no -n).
-    export EDITOR="$emacs"
-else
-    # When called from another proc and we're outside of emacs, open a new frame right there (-t) and wait (no -n).
-    export EDITOR="$emacs -t"
-fi
+export EDITOR="atom -nw"
 export VISUAL="$EDITOR"
 
 if [[ $(ls --version 2> /dev/null) == *GNU* ]]; then
