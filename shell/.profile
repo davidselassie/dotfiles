@@ -5,7 +5,7 @@
 [[ $(which pyenv) ]] && eval "$(pyenv init -)"
 
 export HOMEROOT="$HOME/.local"
-export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/heroku/bin:$GOROOT/bin"
+export PATH="$HOMEROOT/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/heroku/bin:$GOROOT/bin"
 export MANPATH="$HOMEROOT/man:/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PKG_CONFIG_PATH="$HOMEROOT/lib/pkgconfig"
 
