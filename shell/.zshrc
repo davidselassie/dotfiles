@@ -27,17 +27,18 @@ if [[ -f "$HOME/.travis/travis.sh" ]]; then
     source "$HOME/.travis/travis.sh"
 fi
 
-# This will start a daemon emacs if not already running on any invocation of emacsclient.
-export ALTERNATE_EDITOR=""
-if [[ -x "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient" ]]; then
-    emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+if [[ -d "/Applications/Emacs.app" ]]; then
+    emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
+    emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 else
-    emacs="$(which emacsclient)"
+    emacs="$(which emacs)"
+    emacsclient="$(which emacsclient)"
 fi
-# If called directly by me, use any existing frame in the GUI (no -t) and return immediately (-n).
-alias em="$emacs -n"
-export EDITOR="atom -nw"
+# If called directly by me, return immediately (-n).
+alias em="$emacsclient -n"
+export EDITOR="$emacsclient"
 export VISUAL="$EDITOR"
+export ALTERNATE_EDITOR="$emacs"
 
 if [[ $(ls --version 2> /dev/null) == *GNU* ]]; then
     alias ls="ls -lhG --color=auto"
