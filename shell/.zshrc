@@ -27,18 +27,8 @@ if [[ -f "$HOME/.travis/travis.sh" ]]; then
     source "$HOME/.travis/travis.sh"
 fi
 
-if [[ -d "/Applications/Emacs.app" ]]; then
-    emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
-    emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-else
-    emacs="$(which emacs)"
-    emacsclient="$(which emacsclient)"
-fi
-# If called directly by me, return immediately (-n).
-alias em="$emacsclient -n"
-export EDITOR="$emacsclient"
+export EDITOR="atom -w"
 export VISUAL="$EDITOR"
-export ALTERNATE_EDITOR="$emacs"
 
 if [[ $(ls --version 2> /dev/null) == *GNU* ]]; then
     alias ls="ls -lhG --color=auto"
