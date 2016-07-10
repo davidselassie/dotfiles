@@ -19,14 +19,6 @@ source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
-if [[ -f "$HOME/.hashcolor" ]]; then
-    source "$HOME/.hashcolor"
-fi
-
-if [[ -f "$HOME/.travis/travis.sh" ]]; then
-    source "$HOME/.travis/travis.sh"
-fi
-
 export EDITOR="atom -w"
 export VISUAL="$EDITOR"
 
