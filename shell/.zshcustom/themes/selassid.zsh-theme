@@ -1,5 +1,5 @@
 autoload -U colors && colors
-export LSCOLORS="ExGxFxDxCxEgEdAbAgAcAd"
+export LSCOLORS="exgxfxdxcxegedabagacad"
 
 function git_prompt() {
     if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
