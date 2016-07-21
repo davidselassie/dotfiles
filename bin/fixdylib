@@ -21,11 +21,11 @@ do
     # Go through every other dylib here and change the link to the new installed path.
     for lib_file_2 in **/*.dylib
     do
-	lib_old_path=`otool -L "$lib_file_2" | grep "$lib_file" | awk '{ print $1; }'`
+    lib_old_path=`otool -L "$lib_file_2" | grep "$lib_file" | awk '{ print $1; }'`
 
-	if [[ $lib_old_path ]]
-	then
-	    install_name_tool -change "$lib_old_path" "$installed_lib" "$lib_file_2"
-	fi
+    if [[ $lib_old_path ]]
+    then
+        install_name_tool -change "$lib_old_path" "$installed_lib" "$lib_file_2"
+    fi
     done
 done

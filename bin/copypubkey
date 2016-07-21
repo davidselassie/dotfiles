@@ -35,9 +35,9 @@ then
 
     if (( $DONE == 0 ))
     then
-	   echo "You should now be able to 'ssh $SERVER' without having to type in a password."
+        echo "You should now be able to 'ssh $SERVER' without having to type in a password."
     else
-	   echo "Couldn't log in ($DONE)! Copy your key manually."
+        echo "Couldn't log in ($DONE)! Copy your key manually."
     fi
 else
     echo "Something is wrong with your key pair! Make yours manually."

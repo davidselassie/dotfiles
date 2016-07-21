@@ -2,9 +2,9 @@
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]
 then
-  echo "Replaces whitespace on each line in a file with tabs."
-  echo "USAGE: $(basename $0) [NEW_DELIM='\t'] < IN > OUT"
-  exit 1
+    echo "Replaces whitespace on each line in a file with tabs."
+    echo "USAGE: $(basename $0) [NEW_DELIM='\t'] < IN > OUT"
+    exit 1
 fi
 
 DELIM=${1:-'\t'}

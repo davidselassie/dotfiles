@@ -6,17 +6,17 @@ import sys
 import os
 
 if len(sys.argv) < 2:
-	print "USAGE findcasetrouble PATH"
-	sys.exit(-1)
+    print "USAGE findcasetrouble PATH"
+    sys.exit(-1)
 
 nameSet = set()
 troubleSet = set()
 
 for basePath, subDirs, subFiles in os.walk(sys.argv[1]):
-	for subPath in subDirs + subFiles:
-		lower = os.path.join(basePath, subPath).lower()
-		if lower not in nameSet:
-			nameSet.add(lower)
-		else:
-			troubleSet.add(lower)
-			print lower
+    for subPath in subDirs + subFiles:
+        lower = os.path.join(basePath, subPath).lower()
+        if lower not in nameSet:
+            nameSet.add(lower)
+        else:
+            troubleSet.add(lower)
+            print lower

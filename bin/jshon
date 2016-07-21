@@ -9,8 +9,8 @@ import json
 import sys
 
 if '-h' in sys.argv or '--help' in sys.argv:
-   sys.stderr.write('USAGE: jshon --KEY VALUE...')
-   sys.exit(1)
+    sys.stderr.write('USAGE: jshon --KEY VALUE...')
+    sys.exit(1)
 
 def typeify(token):
     if token == 'null':

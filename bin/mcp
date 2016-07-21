@@ -2,9 +2,9 @@
 
 if [[ $# -lt 1 || "$1" == "-h" || "$1" == "--help" ]]
 then
-	echo "Copies one file into multiple folders."
-	echo "USAGE: $(basename $0) SOURCE_FILE TARGETS..."
-	exit 1
+    echo "Copies one file into multiple folders."
+    echo "USAGE: $(basename $0) SOURCE_FILE TARGETS..."
+    exit 1
 fi
 
 source="$1"
@@ -12,10 +12,10 @@ shift
 
 for dest in "$@"
 do
-	if [ -d "$dest" ]
-	then
-		cp -r "$source" "$dest"
-	else
-		echo "mcp: '$dest' is not a directory" 1>&2
-	fi
+    if [ -d "$dest" ]
+    then
+        cp -r "$source" "$dest"
+    else
+        echo "mcp: '$dest' is not a directory" 1>&2
+    fi
 done

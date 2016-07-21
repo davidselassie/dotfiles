@@ -8,11 +8,11 @@
 #require 'optparse'
 #options = {:max => 4, :runs => 4, :exe => "../build/clathrin3d", :log => "clathrin3d.log"}
 #parser = OptionParser.new do |opts|
-#	opts.on("-m", "--max MAXCONC", Fixnum, "Maximum number of runs simultaneously.") { |val| options[:max] = val }
-#	opts.on("-r", "--runs RUNS", Fixnum, "Total number of runs in each folder.") { |val| options[:runs] = val }
-#	opts.on("-e", "--exe EXEFILE", "Executable file.") { |val| options[:exe] = val }
-#	opts.on("-l", "--log LOGFILE", "Log file name.") { |val| options[:log] = val }
-#	opts.on("-p", "--prefix FOLDERPREFIX", "Run folder prefix.") { |val| options[:prefix] = val }
+#   opts.on("-m", "--max MAXCONC", Fixnum, "Maximum number of runs simultaneously.") { |val| options[:max] = val }
+#   opts.on("-r", "--runs RUNS", Fixnum, "Total number of runs in each folder.") { |val| options[:runs] = val }
+#   opts.on("-e", "--exe EXEFILE", "Executable file.") { |val| options[:exe] = val }
+#   opts.on("-l", "--log LOGFILE", "Log file name.") { |val| options[:log] = val }
+#   opts.on("-p", "--prefix FOLDERPREFIX", "Run folder prefix.") { |val| options[:prefix] = val }
 #end
 #parser.parse!
 
@@ -20,11 +20,11 @@ require 'rubygems'
 # Requires the "nice" ruby command line parser http://trollop.rubyforge.org/ either install it as a gem using "sudo gem install trollop" or put the trollop.rb file from that website in the same folder as this script.
 require 'trollop'
 options = Trollop::options do
-	opt :max, "Maximum number of runs simultaneously", :type => :int, :default => 4
-	opt :runs, "Total number of runs in each folder", :type => :int, :default => 4
-	opt :exe, "Executable file relative to CWD (or absolute path)", :default => "build/clathrin3d"
-	opt :log, "Log file name", :default => "clathrin3d.log"
-	opt :prefix, "Run folder prefix", :default => "run"
+    opt :max, "Maximum number of runs simultaneously", :type => :int, :default => 4
+    opt :runs, "Total number of runs in each folder", :type => :int, :default => 4
+    opt :exe, "Executable file relative to CWD (or absolute path)", :default => "build/clathrin3d"
+    opt :log, "Log file name", :default => "clathrin3d.log"
+    opt :prefix, "Run folder prefix", :default => "run"
 end
 
 # Work in the CWD if no sub-directories were specified.
@@ -44,43 +44,43 @@ pids = []
 # Go through each main directory to run the simulation in.
 ARGV.each do |master_dir|
 
-	# Change into the directory for this block.
-	Dir.chdir(master_dir) do
-	
-		STDERR.puts "Working on #{runs} runs in '#{master_dir}'."
-		# Now execute runs # of runs.
-		runs.times do |num|
-			# If we still can spawn new executables without going over the maximum concurrent executable limit.
-			if pids.length < maxconcurrent
-				# Make sure we're not overwriting a directory that exists, just increment the run number.
-				while File.directory?("#{runprefix}#{num}") do
-					STDERR.puts "Found an existing run#{num}; skipping to run#{num + 1}."
-					num += 1
-				end
-				
-				# Make that run directory and go into it.
-				Dir.mkdir("#{runprefix}#{num}")
-				Dir.chdir("#{runprefix}#{num}") do
-					STDERR.puts "Starting run #{num}."
-					
-					# Open up the logfile and put the timestamp and CWD at the top.
-					File.open(logfile, "w") {|io| io.puts "In #{Dir.pwd} at #{Time.new}" }
-					
-					# Now actually spawn the new process and redirect its STDOUT to the logfile.
-					pids << spawn(exefile, :err => :out, :out => [logfile, "a"])
-					sleep(1) # If you have a low-resolution random number seeder that only uses the current second, waiting one second before launching the next program makes sure that the random numbers generated are not identical.
-				end
-				
-			# If we're over the limit for maximum number of executables simultaneously, wait for one to finish.
-			else
-				STDERR.puts "Hit max concurrent runs. Waiting."
-				
-				# Process.wait blocks until a process we spawned from this one is done then returns that finished process' PID. Remove it from the list of PIDs we've spawned.
-				pids.delete(Process.wait)
-				redo
-			end
-		end
-	end
+    # Change into the directory for this block.
+    Dir.chdir(master_dir) do
+    
+        STDERR.puts "Working on #{runs} runs in '#{master_dir}'."
+        # Now execute runs # of runs.
+        runs.times do |num|
+            # If we still can spawn new executables without going over the maximum concurrent executable limit.
+            if pids.length < maxconcurrent
+                # Make sure we're not overwriting a directory that exists, just increment the run number.
+                while File.directory?("#{runprefix}#{num}") do
+                    STDERR.puts "Found an existing run#{num}; skipping to run#{num + 1}."
+                    num += 1
+                end
+                
+                # Make that run directory and go into it.
+                Dir.mkdir("#{runprefix}#{num}")
+                Dir.chdir("#{runprefix}#{num}") do
+                    STDERR.puts "Starting run #{num}."
+                    
+                    # Open up the logfile and put the timestamp and CWD at the top.
+                    File.open(logfile, "w") {|io| io.puts "In #{Dir.pwd} at #{Time.new}" }
+                    
+                    # Now actually spawn the new process and redirect its STDOUT to the logfile.
+                    pids << spawn(exefile, :err => :out, :out => [logfile, "a"])
+                    sleep(1) # If you have a low-resolution random number seeder that only uses the current second, waiting one second before launching the next program makes sure that the random numbers generated are not identical.
+                end
+                
+            # If we're over the limit for maximum number of executables simultaneously, wait for one to finish.
+            else
+                STDERR.puts "Hit max concurrent runs. Waiting."
+                
+                # Process.wait blocks until a process we spawned from this one is done then returns that finished process' PID. Remove it from the list of PIDs we've spawned.
+                pids.delete(Process.wait)
+                redo
+            end
+        end
+    end
 end
 
 # Block until all spawned processes are done.
@@ -91,12 +91,12 @@ STDERR.puts "All done."
 # Now notify that we're done.
 
 # Go to http://www.prowlapp.com/ to check out an iPhone app that lets you push arbitrary notifications to your phones. You can register, sign up for an api_key, and paste it where it says KEYHERE, and it knows to forward it to your phones because of that key.
-if require 'prowler'	
-	Prowler.verify_certificate = false
-	prowler = Prowler.new(:application => Socket.gethostname, :api_key => 'KEYHERE')
-	prowler.logger = nil
-	
-	# Let me know that my runs are complete, no matter where in the world I am!
-	prowler.notify("clathrin3d", "#{runs} runs in #{Dir.pwd} complete.")
+if require 'prowler'    
+    Prowler.verify_certificate = false
+    prowler = Prowler.new(:application => Socket.gethostname, :api_key => 'KEYHERE')
+    prowler.logger = nil
+    
+    # Let me know that my runs are complete, no matter where in the world I am!
+    prowler.notify("clathrin3d", "#{runs} runs in #{Dir.pwd} complete.")
 end
 

@@ -2,9 +2,9 @@
 
 # From http://www.bofh.org.uk/2007/12/16/comprehensible-sorting-in-ruby
 module Enumerable
-	def sensible_sort
-		sort_by { |key| key.split(/(\d+)/).map { |v| v =~ /\d/ ? v.to_i : v } }
-	end
+    def sensible_sort
+        sort_by { |key| key.split(/(\d+)/).map { |v| v =~ /\d/ ? v.to_i : v } }
+    end
 end
 
 # But you might want to also check out 
