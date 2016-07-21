@@ -18,11 +18,11 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 fi
 
-if [[ -z $(which brew) ]]; then
+if [[ -z $(command -v brew) ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if [[ -z $(which stow) ]]; then
+if [[ -z $(command -v stow) ]]; then
     brew install stow
 fi
 
