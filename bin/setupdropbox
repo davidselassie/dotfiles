@@ -11,7 +11,10 @@ DST="$HOME"
 for F in $FOLDERS
 do
   # Copy all new files in the home directory into the Dropbox folder.
-  rsync -au "$DST/$F" "$DBF/$F"
+  if [[ -d "$DST/$F" ]]
+  then
+    rsync -au "$DST/$F" "$DBF/$F"
+  fi
   # Now delete that home folder and make it a link to the Dropbox one.
   sudo rm -rf "$DST/$F" && ln -s "$DBF/$F" "$DST"
 done
