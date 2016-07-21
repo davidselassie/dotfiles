@@ -19,3 +19,19 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+'.source.html':
+  'HTML':
+    'prefix': 'html'
+    'body': """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>$1</title>
+        </head>
+        <body>
+            $2
+        </body>
+        </html>
+        """
