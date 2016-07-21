@@ -13,7 +13,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 ZSH_CUSTOM="$HOME/.zshcustom"
-plugins=(osx brew tmux)
+plugins=(osx brew z)
 
 source "$ZSH/oh-my-zsh.sh"
 
