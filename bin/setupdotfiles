@@ -11,11 +11,12 @@ else
      git clone https://github.com/selassid/dotfiles.git .dotfiles)
 fi
 
-if [[ $(dscl . -read "/Users/$USER" UserShell) != */zsh ]]; then
-    chsh -s /bin/zsh
-fi
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    (cd "$HOME";
+     rm .zshrc)
+elif [[ $(dscl . -read "/Users/$USER" UserShell) != */zsh ]]; then
+    chsh -s /bin/zsh
 fi
 
 if [[ -z $(command -v brew) ]]; then
@@ -36,4 +37,4 @@ fi
 #      git clone git@github.com:selassid/selassid-pack.git)
 # fi
 
-stow -d "$HOME/.dotfiles" -t "$HOME" shell git ssh atom
+stow -v -d "$HOME/.dotfiles" -t "$HOME" shell git ssh atom
