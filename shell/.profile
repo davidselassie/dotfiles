@@ -16,11 +16,8 @@ if [[ $- == *i* ]]; then
     # Reattach to user OS X namespace on first pass, then continue on second.
     # [[ -n $(which reattach-to-user-namespace) && -z $REATTACHED ]] && REATTACHED=1 exec reattach-to-user-namespace -l bash
     # Login shells need to manually read bashrc.
-    if [[ "$SHELL" == *zsh ]]; then
-      if [ -r ~/.zshrc ]; then
-        source ~/.zshrc
-      fi
-    fi
+    [[ "$SHELL" == *zsh && -r ~/.zshrc ]] && source ~/.zshrc
+    [[ "$SHELL" == *bash && -r ~/.bashrc ]] && source ~/.bashrc
 fi
 # Non-login interactive shells automatically read bashrc.
 
