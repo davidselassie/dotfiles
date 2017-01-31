@@ -1,15 +1,15 @@
 "*":
-  Hydrogen:
-    kernelspec: "{\"kernelspecs\":{\"python3\":{\"resources_dir\":\"/usr/local/lib/python3.5/site-packages/ipykernel/resources\",\"spec\":{\"display_name\":\"Python 3\",\"language\":\"python\",\"env\":{},\"argv\":[\"/usr/local/opt/python3/bin/python3.5\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"]}}}}"
   "atom-beautify":
+    css:
+      indent_size: 2
+      newline_between_rules: true
     general:
       _analyticsUserId: "f3f7e604-15b4-475d-9276-6f2cfd4d1111"
     python:
       default_beautifier: "yapf"
-  "clang-format":
-    style: "Google"
   core:
     audioBeep: false
+    telemetryConsent: "limited"
     themes: [
       "one-light-ui"
       "solarized-light-syntax"
@@ -19,59 +19,12 @@
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
-    softWrap: true
-    softWrapHangingIndent: 4
-    tabLength: 4
   "exception-reporting":
     userId: "d2c712bb-6857-a489-4592-fe00372388eb"
   linter: {}
   "linter-eslint": {}
-  "linter-flake8":
-    flakeErrors: true
-    pep8ErrorsToWarnings: true
-  "python-yapf":
-    checkOnSave: false
-    yapfPath: "/usr/local/bin/yapf"
-  tag:
-    "closeTagOn </": false
+  "linter-flake8": {}
+  "linter-markdown": {}
+  "linter-stylelint": {}
   welcome:
     showOnStartup: false
-".basic.html.text":
-  editor:
-    softWrapHangingIndent: 4
-    tabLength: 4
-".console.python.text":
-  editor:
-    softWrapHangingIndent: 4
-    tabLength: 4
-".diff.source":
-  editor:
-    softWrapHangingIndent: 4
-    tabLength: 4
-".js.regexp.replacement.source":
-  editor:
-    softWrapHangingIndent: 4
-".js.regexp.source":
-  editor:
-    softWrapHangingIndent: 4
-".js.source":
-  editor:
-    softWrapHangingIndent: 4
-".json.source":
-  editor:
-    softWrapHangingIndent: 2
-    tabLength: 4
-".md.text":
-  editor:
-    softWrapHangingIndent: 4
-    tabLength: 4
-".python.regexp.source":
-  editor:
-    softWrapHangingIndent: 4
-".python.source":
-  editor:
-    softWrapHangingIndent: 4
-".python.text.traceback":
-  editor:
-    softWrapHangingIndent: 4
-    tabLength: 4
