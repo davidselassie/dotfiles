@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+    <appdef>
+        <appname>ATOM</appname>
+        <equal>com.github.atom</equal>
+    </appdef>
+    <appdef>
+        <appname>INTELLIJ</appname>
+        <equal>com.jetbrains.intellij</equal>
+    </appdef>
+    <appdef>
+        <appname>PYCHARM</appname>
+        <equal>com.jetbrains.pycharm</equal>
+    </appdef>
+    
+    <replacementdef>
+        <replacementname>EMACS_MODE_IGNORE_APPS</replacementname>
+        <replacementvalue>
+            EMACS,
+            REMOTEDESKTOPCONNECTION,
+            TERMINAL,
+            VI,
+            VIRTUALMACHINE,
+            X11,
+            ATOM,
+            INTELLIJ,
+            PYCHARM,
+        </replacementvalue>
+    </replacementdef>
+</root>
