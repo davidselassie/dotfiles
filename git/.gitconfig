@@ -15,7 +15,7 @@
 [alias]
     co = checkout
     lg = log --graph
-    graph = log --oneline --graph --decorate
+    graph = log --oneline --graph --decorate --all
     tar = !sh -c "git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD"
     inject = "!f() { set -e; HASH=`git show $1 --pretty=format:\"%H\" -q`; shift; git commit -m \"fixup! $HASH\" $*; [ -n \"$(git diff-files)\" ] && git stash && DIRTY=1; git rebase $HASH^^ -i --autosquash; [ -n \"$DIRTY\" ] && git stash pop;}; f"
 [push]
