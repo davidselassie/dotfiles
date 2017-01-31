@@ -29,16 +29,20 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(before-save-hook (quote (delete-trailing-whitespace)))
+ '(custom-enabled-themes (quote (solarized-light)))
  '(custom-safe-themes
    (quote
-	("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
+	("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
+ '(dired-use-ls-dired (quote unspecified))
  '(global-hl-line-mode t)
+ '(menu-bar-mode nil)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (1)))
  '(package-selected-packages
    (quote
 	(solarized-theme paredit magit undo-tree ensime scala-mode use-package)))
  '(tab-width 4)
+ '(tool-bar-mode nil)
  '(vc-follow-symlinks t)
  '(word-wrap t))
 (custom-set-faces
