@@ -1,7 +1,7 @@
 export HOMEROOT="$HOME/.local"
 
 typeset -U path  # Make the path array only have unique items.
-path=($HOMEROOT/bin $HOME/.dotfiles/bin /usr/local/bin /usr/local/sbin $path /usr/local/opt/coreutils/libexec/gnubin)
+path=($HOMEROOT/bin /Applications/Emacs.app/Contents/MacOS/bin /Applications/Emacs.app/Contents/MacOS /usr/local/bin /usr/local/sbin $path /usr/local/opt/coreutils/libexec/gnubin)
 
 typeset -U manpath
 manpath=($HOMEROOT/man /usr/local/opt/coreutils/libexec/gnuman $manpath)
