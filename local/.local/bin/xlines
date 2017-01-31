@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec parallel --pipe -N1 "$@"

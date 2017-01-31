@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$1" == "-h" || "$1" == "-help" ]]
+then
+  echo "Removes bash comments from a file."
+  echo "USAGE: $(basename $0) < FILE > NOCOMMENTS"
+  exit 1
+fi
+
+exec sed '/^\s*[#@]/d'

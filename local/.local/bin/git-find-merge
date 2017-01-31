@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $# < 2 ]]
+then
+    echo "USAGE: git-find-merge COMMIT_SHA [RECIPIENT_BRANCH]" 1>&2
+    echo "Finds the merge commit that introduced COMMIT_SHA into RECIPIENT_BRANCH (defaults to 'master')." 1>&2
+    exit 1
+fi
+
+COMMIT_SHA="$1"
+RECIPIENT_BRANCH="${2:-master}"
+
+# See http://stackoverflow.com/questions/8475448/find-merge-commit-which-include-a-specific-commit
+comm --nocheck-order -1 -2 <(git rev-list $COMMIT_SHA..$RECIPIENT_BRANCH --ancestry-path) <(git rev-list $COMMIT_SHA..$RECIPIENT_BRANCH --first-parent) | tail -n1

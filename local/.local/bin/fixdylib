@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# David Selassie
+# February 15, 2012
+# fixdylib.sh
+
+shopt -s globstar
+
+# Get where we want to have the dylibs installed.
+install_dir="$1"
+
+# Go through every dylib.
+for lib_file in **/*.dylib
+do
+    installed_lib="$install_dir/$lib_file"
+    echo "> Fixing $lib_file into $install_dir"
+
+    # Fix it's installed name to the new path.
+    install_name_tool -id "$installed_lib" "$lib_file"
+
+    # Go through every other dylib here and change the link to the new installed path.
+    for lib_file_2 in **/*.dylib
+    do
+    lib_old_path=`otool -L "$lib_file_2" | grep "$lib_file" | awk '{ print $1; }'`
+
+    if [[ $lib_old_path ]]
+    then
+        install_name_tool -change "$lib_old_path" "$installed_lib" "$lib_file_2"
+    fi
+    done
+done

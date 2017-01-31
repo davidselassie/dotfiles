@@ -1,0 +1,74 @@
+#!/usr/bin/python
+
+# David Selassie
+# September 22, 2012
+# backwash
+
+import argparse
+import json
+import os
+import subprocess
+import sys
+
+# USAGE: Well, run this periodically, and it will look at the directories listed in ~/.backwash and rsync them to the backup server.
+
+def quote(string, quote='"'):
+    return "{0}{1}{0}".format(quote, string)
+
+
+# Load default config.
+config = {
+    'rsync_flags': '-aPv --del -e "ssh -c arcfour -o Compression=no -x"'
+}
+loaded_paths = []
+for config_path in ['/etc/backwash', '~/.backwash']:
+    config_path = os.path.expanduser(config_path)
+    try:
+        with file(config_path, 'r') as config_file:
+            config.update(json.load(config_file))
+            print("Loaded config from '{0}'".format(config_path))
+            loaded_paths.append(config_path)
+    except IOError:
+        pass
+
+
+# Merge in command line config.
+parser = argparse.ArgumentParser(description='Backup directories through rsync',
+                                 epilog='Config is read in JSON format from '
+                                 '/etc/backwash and ~/.backwash sequentially. '
+                                 'Possible config keys: "path" array, '
+                                 '"destination" string, "rsync_flags" string.')
+parser.set_defaults(**config)
+parser.add_argument('-d', '--destination',
+                    help='Destination path; can use $USER, $HOSTNAME, SFTP '
+                    '(currently: "%(default)s")')
+parser.add_argument('-n', dest='rsync_flags', action='append_const', const='n',
+                    help='Dry run')
+parser.add_argument('path', metavar='PATH', nargs='*',
+                    help='Path to copy '
+                    '(currently: %(default)s)')
+config = parser.parse_args()
+# Check arguments.
+if len(config.path) < 1:
+    raise argparse.ArgumentTypeError('one path is required')
+if not config.destination:
+    raise argparse.ArgumentTypeError('a destination is required')
+
+
+# Setup rsync variables.
+paths = [quote(os.path.expanduser(path)) for path in config.path]
+path_args = ' '.join(paths)
+destination = quote(config.destination)
+rsync_flags = config.rsync_flags
+
+
+# Do.
+print("Copying {0} to {1}...".format(path_args, destination))
+exs = subprocess.call("HOSTNAME=\`hostname\` "
+                "rsync {0} "
+                "{1} {2}".format(rsync_flags, path_args, destination),
+                shell=True)
+if exs == 0:
+    print("...done")
+else:
+    print("...failed")

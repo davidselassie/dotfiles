@@ -1,0 +1,12 @@
+#!/bin/bash
+# Delete a branch locally and on a remote.
+# USAGE: git-kill-branch BRANCH...
+
+REMOTE="origin"
+
+git fetch $REMOTE
+for B in "$@"
+do
+    git branch -D "$B"
+    git push $REMOTE --delete "$B"
+done
