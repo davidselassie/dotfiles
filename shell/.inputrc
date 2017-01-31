@@ -12,8 +12,6 @@ set show-all-if-ambiguous on
 # Complete the / at the end of symlinks to dirs
 set mark-symlinked-directories on
 
-# xterm escape code bindings.
-"\e[1;3D": backward-word
-"\e[1;3C": forward-word
-"\e[1;5D": beginning-of-line
-"\e[1;5C": end-of-line
+# Arrow key escape code bindings
+"\e[1;9C": forward-word
+"\e[1;9D": backward-word
