@@ -3,8 +3,6 @@
 setopt errexit
 setopt xtrace
 
-DROPBOX_DIR="$HOME/Dropbox"
-
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
     (cd "$HOME";
@@ -21,29 +19,7 @@ if [[ -z "$(command -v stow)" ]]; then
     brew install stow
 fi
 
-# if [[ $(head -n1 "$HOME/.emacs.d/init.el") != (*Emacs LIVE*) ]]; then
-#     bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
-# fi
-
-# if [[ ! -d "$HOME/.live-packs/selassid-pack" ]]; then
-#     mkdir -pv "$HOME/.live-packs"
-#     (cd "$HOME/.live-packs";
-#      git clone git@github.com:selassid/selassid-pack.git)
-# fi
-
 # brew cask install karabiner
 
-export STOW_DIR="$DROPBOX_DIR/Dotfiles"
-stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' oskeys shell git local ssh atom
-
-FOLDERS=( Development Documents Movies Music Pictures Roms )
-
-for F in $FOLDERS
-do
-    # Copy all new files in the home directory into the Dropbox folder.
-    if [[ -d "$HOME/$F" ]]; then
-        rsync -au "$HOME/$F" "$DROPBOX_DIR/$F"
-    fi
-    # Now delete that home folder and make it a link to the Dropbox one.
-    sudo rm -rf "$HOME/$F" && ln -s "$DROPBOX_DIR/$F" "$HOME"
-done
+export STOW_DIR="$HOME/.dotfiles"
+stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' oskeys shell git local ssh emacs
