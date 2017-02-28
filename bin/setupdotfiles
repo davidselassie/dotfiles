@@ -23,8 +23,7 @@ if [[ -z $(command -v brew) ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if [[ -z $(command -v stow) ]]; then
-    brew install stow
-fi
+brew install stow tmux git
+brew cask install iterm2 emacs karabiner
 
 stow -v -d "$HOME/.dotfiles" -t "$HOME" shell local git ssh emacs oskeys tmux
