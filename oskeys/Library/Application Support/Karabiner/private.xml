@@ -9,10 +9,14 @@
         <equal>com.jetbrains.intellij</equal>
     </appdef>
     <appdef>
+        <appname>INTELLIJCE</appname>
+        <equal>com.jetbrains.intellij.ce</equal>
+    </appdef>
+    <appdef>
         <appname>PYCHARM</appname>
         <equal>com.jetbrains.pycharm</equal>
     </appdef>
-    
+
     <replacementdef>
         <replacementname>EMACS_MODE_IGNORE_APPS</replacementname>
         <replacementvalue>
@@ -24,6 +28,7 @@
             X11,
             ATOM,
             INTELLIJ,
+            INTELLIJCE,
             PYCHARM,
         </replacementvalue>
     </replacementdef>
