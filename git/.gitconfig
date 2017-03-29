@@ -2,8 +2,6 @@
     ui = auto
 [core]
     excludesfile = ~/.dotfiles/gituserignore
-[include]
-    path = ~/.gitlocalconfig
 [merge]
     conflictstyle = diff3
     ff = false
@@ -13,7 +11,11 @@
     smudge = expand --initial -t 4
     required
 [alias]
+    s = status --short
+    cm = commit
     co = checkout
+    d = diff
+    dc = diff --cached
     lg = log --graph
     graph = log --oneline --graph --decorate --all
     tar = !sh -c "git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD"
@@ -29,3 +31,5 @@
     required = true
 [credential]
     helper = osxkeychain
+[include]
+    path = ~/.gitconfiglocal
