@@ -22,7 +22,7 @@
     s = status --short
     tar = !sh -c "git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD"
 [push]
-    default = simple
+    default = current
 [user]
     name = David Selassie
     email = selassid@gmail.com
