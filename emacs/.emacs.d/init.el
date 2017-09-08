@@ -75,3 +75,4 @@
 ;(setq-default ispell-really-hunspell t)
 
 (server-start)
+(put 'downcase-region 'disabled nil)
