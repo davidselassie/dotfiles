@@ -12,6 +12,7 @@
     required
 [alias]
     cm = commit
+    cma = commit -a --amend --no-edit
     co = checkout
     d = diff
     dc = diff --cached
