@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set promptResponse to display dialog "Shell command:" default answer "" buttons {"Cancel", "Run"} default button "Run" cancel button "Cancel"	try		set cmdResponse to do shell script "echo " &amp; quoted form of (input as text) &amp; " | " &amp; text returned of promptResponse		display dialog cmdResponse with title "Output" with icon note buttons {"OK"} default button "OK"	on error errStr number errNumber		display dialog errStr with title "Error" with icon stop buttons {"OK"} default button "OK"	end tryend run</string>
+					<string>on run {input, parameters}	set cmd to text returned of (display dialog "Command?" default answer "wc")	try		set output to do shell script "tr '\\r' '\\n' &lt;&lt;&lt; " &amp; quoted form of (input as text) &amp; " | $SHELL --login -c " &amp; quoted form of cmd		display alert the output as informational	on error the error_message number the error_number		display alert the error_message as critical	end tryend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -68,17 +68,15 @@
 				<key>Class Name</key>
 				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>A530CF62-EC36-4146-9552-F862445616C2</string>
+				<string>3DD08085-F9E8-4C6B-96FE-860036D8412E</string>
 				<key>Keywords</key>
 				<array>
 					<string>Run</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>E231F493-08D8-4FC2-A598-E9BBCF8CC6FC</string>
-				<key>StartAction</key>
-				<false/>
+				<string>F9ADE6C8-F390-4A82-A67C-3E61066EB771</string>
 				<key>UUID</key>
-				<string>226F68AF-A5CA-4EC6-9803-C71264EED405</string>
+				<string>30F76EAF-5BAE-4EE7-A366-2C316F5E4116</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -119,6 +117,17 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict/>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>0F9EBE91-1721-4914-86D3-99C4EB2E9F74</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>Output</string>
+		</dict>
+	</array>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>serviceInputTypeIdentifier</key>
