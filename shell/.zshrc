@@ -29,6 +29,9 @@ bindkey '^[l' down-case-word
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
+# For plan9port
+unalias 9
+
 export EDITOR="emacsclient"
 export VISUAL="$EDITOR"
 alias em="emacsclient -n"
