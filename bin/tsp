@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+
+import sys
+import arrow
+
+for line in sys.stdin:
+    print(arrow.get(line).to('local'))
