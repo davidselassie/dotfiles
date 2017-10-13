@@ -1,9 +1,0 @@
-#! /bin/sh
-
-disktool -u $1
-mkdir "$HOME/.cdimage"
-cdrdao read-cd --device IODVDServices --driver generic-mmc --eject --read-raw --datafile "$HOME/.cdimage/cdimage.iso" "$HOME/.cdimage/cdimage.toc"
-echo "Change CD to a blank disk then press return."
-read
-cdrdao write --device IODVDServices --driver generic-mmc --eject --speed 40 --reload -n "$HOME/.cdimage/cdimage.toc"
-rm -rf "$HOME/.cdimage"
