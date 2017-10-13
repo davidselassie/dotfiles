@@ -65,6 +65,7 @@ alias jcat="jq -s -S 'reduce .[] as \$x ({}; . * \$x)'"
 alias git-archive='git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD'
 alias chropen="open -b com.google.chrome"
 alias watch="watch -cd"
+alias idate="date +%Y-%m-%dT%H:%M:%S%z"
 
 function mid {
     tail -n +$1 $3 | head -n $2
