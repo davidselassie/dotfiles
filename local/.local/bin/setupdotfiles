@@ -22,4 +22,4 @@ fi
 # brew cask install karabiner
 
 export STOW_DIR="$HOME/.dotfiles"
-stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' oskeys shell git local ssh emacs
+stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' oskeys shell git local ssh hammerspoon
