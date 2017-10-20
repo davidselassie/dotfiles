@@ -32,9 +32,9 @@ bindkey '^[[1;9D' backward-word
 # For plan9port
 unalias 9
 
-export EDITOR="emacsclient"
+export EDITOR="emacs"
 export VISUAL="$EDITOR"
-alias em="emacsclient -n"
+alias em="emacs"
 
 if [[ $(ls --version 2> /dev/null) == *GNU* ]]; then
     alias ls="ls -lhG --color=auto"
