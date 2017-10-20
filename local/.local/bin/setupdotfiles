@@ -19,7 +19,5 @@ if [[ -z "$(command -v stow)" ]]; then
     brew install stow
 fi
 
-# brew cask install karabiner
-
 export STOW_DIR="$HOME/.dotfiles"
-stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' oskeys shell git local ssh hammerspoon
+stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' shell git local services ssh hammerspoon
