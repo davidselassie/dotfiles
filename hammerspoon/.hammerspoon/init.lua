@@ -11,10 +11,6 @@ function reloadConfig(files)
 end
 configWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
-  hs.alert.show("Hello World!")
-end)
-
 function selectZoomMenuItem(menuPath)
   local zoom = hs.appfinder.appFromName("zoom.us")
 
