@@ -1,18 +1,17 @@
-#!/bin/zsh
+#!/bin/bash
 
-setopt errexit
-setopt xtrace
-
-if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
-    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-    (cd "$HOME";
-     rm .zshrc)
-elif [[ $(dscl . -read "/Users/$USER" UserShell) != */zsh ]]; then
-    chsh -s /bin/zsh
-fi
+set -eEox
 
 if [[ -z "$(command -v brew)" ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if [[ -z "$(command -v fish)" ]]; then
+    brew install fish
+fi
+
+if [[ $(dscl . -read "/Users/$USER" UserShell) != */fish ]]; then
+    chsh -s /usr/local/bin/fish
 fi
 
 if [[ -z "$(command -v stow)" ]]; then
@@ -20,6 +19,6 @@ if [[ -z "$(command -v stow)" ]]; then
 fi
 
 export STOW_DIR="$HOME/.dotfiles"
-stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' git local ssh hammerspoon
+stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' local
 # Things that don't support having symlink files, just directories.
-stow -v -t "$HOME" --ignore='\.DS_Store' karabiner services
+stow -v -t "$HOME" --ignore='\.DS_Store' fish vis ssh git karabiner hammerspoon services
