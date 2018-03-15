@@ -1007,6 +1007,14 @@
                     "simple_modifications": [
                         {
                             "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "down_arrow"
                             },
                             "to": {
@@ -1043,6 +1051,14 @@
                             },
                             "to": {
                                 "key_code": "vk_none"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "fn"
+                            },
+                            "to": {
+                                "key_code": "escape"
                             }
                         }
                     ]
