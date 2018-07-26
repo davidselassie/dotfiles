@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ "$#" -lt 1 || "$1" == '-h' || "$1" == '--help' ]]
+then
+  echo "USAGE: $(basename $0) REMOTE"
+  echo "Deletes all non-master branches on remote."
+  exit 1
+fi
+
+set -Eeuo pipefail
+
+REMOTE="$1"
+
+git fetch --prune "$REMOTE" "+refs/heads/*:refs/remotes/$REMOTE/*"
+git branch -r --list "$REMOTE/*" | fex '/{2:}' | grep -v master | xargs git push "$REMOTE" --delete

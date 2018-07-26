@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ "$#" -lt 1 || "$1" == '-h' || "$1" == '--help' ]]
+then
+  echo "USAGE: $(basename $0) REMOTE"
+  echo "Deletes all non-master remote tracking branches for this remote and sets refspec to only fetch master in the future."
+  exit 1
+fi
+
+set -Eeuo pipefail
+
+REMOTE="$1"
+
+git fetch --prune "$REMOTE"
+git branch -r --list "$REMOTE/*" | grep -v "$REMOTE/master" | xargs git branch -rd
+git config --local --replace-all "remotes.$REMOTE.fetch" "+refs/heads/master:refs/remotes/$REMOTE/master"
