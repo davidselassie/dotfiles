@@ -13,4 +13,4 @@ REMOTE="$1"
 
 git checkout master
 git remote prune "$REMOTE"
-git branch -vv | grep "\[$REMOTE/.*: gone\]" | fex 1 | xargs git branch -D
+git branch -vv | grep "\[$REMOTE/.*: gone\]" | cut -d' ' -f3 | xargs git branch -D
