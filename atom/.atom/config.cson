@@ -1,0 +1,17 @@
+"*":
+  autosave:
+    enabled: true
+  core:
+    closeDeletedFileTabs: true
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "Inconsolata, Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 12
+    showInvisibles: true
+  "exception-reporting":
+    userId: "819525d7-b503-451d-9151-49f4aeda090d"
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
+  welcome:
+    showOnStartup: false
