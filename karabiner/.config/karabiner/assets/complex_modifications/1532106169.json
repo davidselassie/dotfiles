@@ -1,8 +1,8 @@
 {
-  "title": "Emacs key bindings (rev 9)",
+  "title": "Emacs key bindings (rev 12)",
   "rules": [
     {
-      "description": "Emacs key bindings [C-x key strokes] (rev 1)",
+      "description": "Emacs key bindings [C-x key strokes] (rev 2)",
       "manipulators": [
         {
           "type": "basic",
@@ -158,6 +158,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -173,6 +174,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -188,6 +190,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -196,7 +199,7 @@
       ]
     },
     {
-      "description": "Emacs key bindings [control+keys] (rev 9)",
+      "description": "Emacs key bindings [control+keys] (rev 10)",
       "manipulators": [
         {
           "type": "basic",
@@ -227,6 +230,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -242,6 +246,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -257,6 +262,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -291,6 +297,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -306,6 +313,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -321,6 +329,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -355,6 +364,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -370,6 +380,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -385,6 +396,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -496,6 +508,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -511,6 +524,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -526,6 +540,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -561,6 +576,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -576,6 +592,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -591,6 +608,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -626,6 +644,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -641,6 +660,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -656,6 +676,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -691,6 +712,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -706,6 +728,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -721,6 +744,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -755,6 +779,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -770,6 +795,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -785,6 +811,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -915,7 +942,7 @@
       ]
     },
     {
-      "description": "Emacs key bindings [option+keys] (rev 4)",
+      "description": "Emacs key bindings [option+keys] (rev 5)",
       "manipulators": [
         {
           "type": "basic",
@@ -946,6 +973,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -961,6 +989,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -976,6 +1005,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -1013,6 +1043,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -1028,6 +1059,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -1043,6 +1075,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -1080,6 +1113,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -1095,6 +1129,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -1110,6 +1145,7 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
                 "^com\\.microsoft\\.VSCode$"
               ]
             }
@@ -1146,6 +1182,7 @@
                 "^org\\.pqrs\\.unknownapp.conkeror$",
                 "^com\\.microsoft\\.rdc$",
                 "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
                 "^com\\.microsoft\\.rdc\\.osx\\.beta$",
                 "^net\\.sf\\.cord$",
                 "^com\\.thinomenon\\.RemoteDesktopConnection$",
@@ -1161,6 +1198,7 @@
                 "^co\\.zeit\\.hyperterm$",
                 "^co\\.zeit\\.hyper$",
                 "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.vim\\.",
                 "^com\\.qvacua\\.VimR$",
                 "^com\\.vmware\\.fusion$",
@@ -1176,6 +1214,887 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Bash style Emacs key bindings (rev 2)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$",
+                "^org\\.gnu\\.AquamacsEmacs$",
+                "^org\\.gnu\\.Aquamacs$",
+                "^org\\.pqrs\\.unknownapp.conkeror$",
+                "^com\\.microsoft\\.rdc$",
+                "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
+                "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                "^net\\.sf\\.cord$",
+                "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                "^com\\.itap-mobile\\.qmote$",
+                "^com\\.nulana\\.remotixmac$",
+                "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                "^com\\.teamviewer\\.TeamViewer$",
+                "^com\\.vmware\\.horizon$",
+                "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyperterm$",
+                "^co\\.zeit\\.hyper$",
+                "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
+                "^org\\.vim\\.",
+                "^com\\.qvacua\\.VimR$",
+                "^com\\.vmware\\.fusion$",
+                "^com\\.vmware\\.horizon$",
+                "^com\\.vmware\\.view$",
+                "^com\\.parallels\\.desktop$",
+                "^com\\.parallels\\.vm$",
+                "^com\\.parallels\\.desktop\\.console$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.vmware\\.proxyApp\\.",
+                "^com\\.parallels\\.winapp\\.",
+                "^org\\.x\\.X11$",
+                "^com\\.apple\\.x11$",
+                "^org\\.macosforge\\.xquartz\\.X11$",
+                "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command",
+                "left_shift"
+              ]
+            },
+            {
+              "key_code": "delete_or_backspace",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$",
+                "^org\\.gnu\\.AquamacsEmacs$",
+                "^org\\.gnu\\.Aquamacs$",
+                "^org\\.pqrs\\.unknownapp.conkeror$",
+                "^com\\.microsoft\\.rdc$",
+                "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$",
+                "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                "^net\\.sf\\.cord$",
+                "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                "^com\\.itap-mobile\\.qmote$",
+                "^com\\.nulana\\.remotixmac$",
+                "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                "^com\\.teamviewer\\.TeamViewer$",
+                "^com\\.vmware\\.horizon$",
+                "^com\\.2X\\.Client\\.Mac$",
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyperterm$",
+                "^co\\.zeit\\.hyper$",
+                "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$",
+                "^org\\.vim\\.",
+                "^com\\.qvacua\\.VimR$",
+                "^com\\.vmware\\.fusion$",
+                "^com\\.vmware\\.horizon$",
+                "^com\\.vmware\\.view$",
+                "^com\\.parallels\\.desktop$",
+                "^com\\.parallels\\.vm$",
+                "^com\\.parallels\\.desktop\\.console$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.vmware\\.proxyApp\\.",
+                "^com\\.parallels\\.winapp\\.",
+                "^org\\.x\\.X11$",
+                "^com\\.apple\\.x11$",
+                "^org\\.macosforge\\.xquartz\\.X11$",
+                "^org\\.macports\\.X11$",
+                "^com\\.sublimetext\\.",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "For Visual Studio Code: Emacs key bindings [control+keys] (rev 10)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "keyboard_type_if",
+              "keyboard_types": [
+                "ansi",
+                "iso"
+              ]
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "keyboard_type_if",
+              "keyboard_types": [
+                "jis"
+              ]
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_down"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "home"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.Excel$",
+                "^com\\.microsoft\\.Powerpoint$",
+                "^com\\.microsoft\\.Word$"
+              ]
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "end"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.Excel$",
+                "^com\\.microsoft\\.Powerpoint$",
+                "^com\\.microsoft\\.Word$"
+              ]
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.eclipse\\.platform\\.ide$"
+              ]
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.eclipse\\.platform\\.ide$"
+              ]
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "For Visual Studio Code: Emacs key bindings [option+keys] (rev 5)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_up"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ],
+              "optional": [
+                "caps_lock",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "For Visual Studio Code: Bash style Emacs key bindings (rev 2)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command",
+                "left_shift"
+              ]
+            },
+            {
+              "key_code": "delete_or_backspace",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
                 "^com\\.microsoft\\.VSCode$"
               ]
             }

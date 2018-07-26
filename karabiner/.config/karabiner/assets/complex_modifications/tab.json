@@ -1,12 +1,12 @@
 {
-  "title": "Return to Option",
+  "title": "Change tab",
   "rules": [
     {
-      "description": "Return to Option on single press, Return on press and hold.",
+      "description": "Tab to shift when held",
       "manipulators": [
         {
           "from": {
-            "key_code": "return_or_enter",
+            "key_code": "tab",
             "modifiers": {
               "optional": [
                 "any"
@@ -15,12 +15,12 @@
           },
           "to": [
             {
-              "key_code": "left_alt"
+              "key_code": "left_shift"
             }
           ],
           "to_if_alone": [
             {
-              "key_code": "return_or_enter"
+              "key_code": "tab"
             }
           ],
           "type": "basic"
