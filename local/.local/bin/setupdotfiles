@@ -10,6 +10,11 @@ if [[ -z "$(command -v fish)" ]]; then
     brew install fish
 fi
 
+if [[ -z "$(command -v fisher)" ]]; then
+    curl -Lo "$HOME/.config/fish/functions/fisher.fish" --create-dirs https://git.io/fisher
+    fisher
+fi
+
 if [[ $(dscl . -read "/Users/$USER" UserShell) != */fish ]]; then
     chsh -s /usr/local/bin/fish
 fi
