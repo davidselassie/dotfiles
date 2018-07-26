@@ -24,6 +24,6 @@ if [[ -z "$(command -v stow)" ]]; then
 fi
 
 export STOW_DIR="$HOME/.dotfiles"
-stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' local
+stow -v -t "$HOME" --no-folding --ignore='\.DS_Store' local fish
 # Things that don't support having symlink files, just directories.
-stow -v -t "$HOME" --ignore='\.DS_Store' fish ssh git karabiner hammerspoon services
+stow -v -t "$HOME" --ignore='\.DS_Store' ssh git karabiner hammerspoon services
