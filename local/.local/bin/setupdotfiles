@@ -6,9 +6,17 @@ if [[ -z "$(command -v brew)" ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if [[ -z "$(command -v fish)" ]]; then
-    brew install fish
-fi
+brew install \
+  fish \
+  stow \
+  kryptco/tap/kr \
+  ripgrep \
+  jq \
+  miller \
+  fex \
+  watch \
+  pv \
+  dos2unix
 
 if [[ ! -f "$HOME/.config/fish/functions/fisher.fish" ]]; then
     curl -Lo "$HOME/.config/fish/functions/fisher.fish" --create-dirs https://git.io/fisher
@@ -17,10 +25,6 @@ fi
 
 if [[ $(dscl . -read "/Users/$USER" UserShell) != */fish ]]; then
     chsh -s /usr/local/bin/fish
-fi
-
-if [[ -z "$(command -v stow)" ]]; then
-    brew install stow
 fi
 
 export STOW_DIR="$HOME/.dotfiles"
