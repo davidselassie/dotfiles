@@ -8,6 +8,8 @@ set -x VISUAL $EDITOR
 
 set -x MLR_CSV_DEFAULT_RS lf
 
+set -x GPG_TTY (tty)
+
 if test -e $HOME/.config/fish/configlocal.fish
     source $HOME/.config/fish/configlocal.fish
 end

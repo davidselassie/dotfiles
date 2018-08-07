@@ -35,5 +35,11 @@
     required = true
 [credential]
     helper = osxkeychain
+[gpg]
+    program = /usr/local/bin/krgpg
+[commit]
+    gpgSign = true
+[tag]
+    forceSignAnnotated = true
 [include]
     path = ~/.gitconfiglocal
