@@ -130,15 +130,17 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1368 94 445 77 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>334 469 616 174 0 0 1280 800 </string>
+	<string>652 662 616 174 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1552 415 620 392 1280 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>395 157 796 473 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>631 83 425 277 0 0 1920 1080 </string>
+	<string>177 36 585 402 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>533 0 425 777 0 0 1280 777 </string>
+	<string>513 40 1187 1017 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>268 84 585 402 0 0 1280 777 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -389,7 +391,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -968,7 +970,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-05T23:07:43Z</date>
+	<date>2018-07-23T16:52:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1024,6 +1026,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 </dict>
 </plist>
