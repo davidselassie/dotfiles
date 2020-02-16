@@ -3,7 +3,7 @@ set -x PATH $HOMEROOT/bin /usr/local/bin (cat /etc/paths) /usr/local/opt/coreuti
 set -x MANPATH $HOMEROOT/man (cat /etc/manpaths) /usr/local/opt/coreutils/libexec/gnuman
 set -x PKG_CONFIG_PATH $HOMEROOT/lib/pkgconfig
 
-set -x EDITOR "atom -nw"
+set -x EDITOR "bbedit -w"
 set -x VISUAL $EDITOR
 
 set -x MLR_CSV_DEFAULT_RS lf
