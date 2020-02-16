@@ -1,45 +1,45 @@
 [color]
-    ui = auto
+	ui = auto
 [core]
-    excludesfile = ~/.dotfiles/gituserignore
+	excludesfile = ~/.dotfiles/gituserignore
 [merge]
-    conflictstyle = diff3
-    ff = false
-    renormalize = true
+	conflictstyle = diff3
+	ff = false
+	renormalize = true
 [filter "spabs"]
-    clean = expand --initial -t 4
-    smudge = expand --initial -t 4
-    required
+	clean = expand --initial -t 4
+	smudge = expand --initial -t 4
+	required
 [alias]
-    cm = commit
-    cma = commit -a --amend --no-edit
-    co = checkout
-    d = diff
-    b = branch
-    dc = diff --cached
-    graph = log --oneline --graph --decorate --all
-    g = graph
-    inject = "!f() { set -e; HASH=`git show $1 --pretty=format:\"%H\" -q`; shift; git commit -m \"fixup! $HASH\" $*; [ -n \"$(git diff-files)\" ] && git stash && DIRTY=1; git rebase $HASH^^ -i --autosquash; [ -n \"$DIRTY\" ] && git stash pop;}; f"
-    lg = log --graph
-    pr = pull-request
-    s = status --short
-    tar = !sh -c "git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD"
+	cm = commit
+	cma = commit -a --amend --no-edit
+	co = checkout
+	d = diff
+	b = branch
+	dc = diff --cached
+	graph = log --oneline --graph --decorate --all
+	g = graph
+	inject = "!f() { set -e; HASH=`git show $1 --pretty=format:\"%H\" -q`; shift; git commit -m \"fixup! $HASH\" $*; [ -n \"$(git diff-files)\" ] && git stash && DIRTY=1; git rebase $HASH^^ -i --autosquash; [ -n \"$DIRTY\" ] && git stash pop;}; f"
+	lg = log --graph
+	pr = pull-request
+	s = status --short
+	tar = !sh -c "git archive -o "$(basename $PWD)-$(git rev-parse HEAD).tar.bz2" HEAD"
 [push]
-    default = current
+	default = current
 [user]
-    name = David Selassie
-    email = dsel@fastmail.com
+	name = David Selassie
+	email = dsel@fastmail.com
 [filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
-    required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [gpg]
-    program = /usr/local/bin/krgpg
+	program = /usr/local/bin/krgpg
 [commit]
-    gpgSign = true
+	gpgSign = true
 [tag]
-    forceSignAnnotated = true
+	forceSignAnnotated = true
 [include]
-    path = ~/.gitconfiglocal
+	path = ~/.gitconfiglocal

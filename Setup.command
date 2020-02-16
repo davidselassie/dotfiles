@@ -87,8 +87,6 @@ if ! kr me > /dev/null; then
 fi
 if [[ $(git config --global --get gpg.program) != '/usr/local/bin/krgpg' ]]; then
     kr codesign
-    # kr uses tabs...
-    expand -t4 "$HOME/.gitconfig" | sponge "$HOME/.gitconfig"
 fi
 
 # Open all the things!
